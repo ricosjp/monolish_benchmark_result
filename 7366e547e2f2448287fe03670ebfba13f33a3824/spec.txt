@@ -1,7 +1,0 @@
-"physical_cpu" 	 1
-"cpu" 	 "AMD FX(tm)-8300 Eight-Core Processor"
-"cores" 	 4
-"simd" 	 "AVX"
-"memory" 	 "32G"
-"gpu" 	 "GPU 0: GeForce GTX 1050 Ti (UUID: GPU-0fd66a41-9af8-3830-572c-d4df4bef358f)"
-"gcc" 	 "gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
