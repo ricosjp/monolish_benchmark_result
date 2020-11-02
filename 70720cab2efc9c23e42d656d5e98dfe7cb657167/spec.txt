@@ -1,0 +1,7 @@
+"physical_cpu" 	 1
+"cpu" 	 "Intel(R) Pentium(R) CPU G640 @ 2.80GHz"
+"cores" 	 2
+"simd" 	 "SSE2"
+"memory" 	 "16G"
+"gpu" 	 ""
+"gcc" 	 "gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
