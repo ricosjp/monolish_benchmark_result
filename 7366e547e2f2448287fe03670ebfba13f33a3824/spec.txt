@@ -1,7 +1,7 @@
-"physical_cpu" 	 1
-"cpu" 	 "Intel(R) Xeon(R) CPU E31230 @ 3.20GHz"
-"cores" 	 4
+"physical_cpu" 	 8
+"cpu" 	 "Intel(R) Xeon(R) CPU E5-2695 v2 @ 2.40GHz"
+"cores" 	 8
 "simd" 	 "AVX"
-"memory" 	 "32G"
-"gpu" 	 "GPU 0: GeForce GTX 970 (UUID: GPU-adc71738-cc89-7a2f-86a5-47b059ee02af)"
+"memory" 	 "6G"
+"gpu" 	 ""
 "gcc" 	 "gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
