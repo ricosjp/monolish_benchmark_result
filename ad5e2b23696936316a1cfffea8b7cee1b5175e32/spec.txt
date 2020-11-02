@@ -1,0 +1,7 @@
+"physical_cpu" 	 2
+"cpu" 	 "Intel(R) Xeon(R) CPU E5-2450 0 @ 2.10GHz"
+"cores" 	 16
+"simd" 	 "AVX"
+"memory" 	 "144G"
+"gpu" 	 ""
+"gcc" 	 "gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
