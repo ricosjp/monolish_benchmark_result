@@ -1,0 +1,9 @@
+"physical_cpu" 	 2
+"cpu" 	 "Intel(R) Xeon(R) CPU E5-2695 v2 @ 2.40GHz"
+"cores" 	 24
+"simd" 	 "AVX"
+"memory" 	 "512G"
+"gpu" 	 "GPU 0: TITAN X (Pascal) (UUID: GPU-36bbf534-6549-cce9-a5fa-2c60eade82dd)
+GPU 1: Tesla P100-PCIE-16GB (UUID: GPU-05294f42-4b0c-5623-1b73-a22860d4c939)
+GPU 2: TITAN X (Pascal) (UUID: GPU-1925e0a9-6c73-746f-800f-0179d3268c10)"
+"gcc" 	 "gcc (GCC) 8.3.1 20191121 (Red Hat 8.3.1-5)"
