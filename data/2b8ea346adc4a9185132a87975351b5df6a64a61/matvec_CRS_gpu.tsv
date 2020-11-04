@@ -1,9 +1,0 @@
-func	prec	M	N	time[sec]	perf[GFLOPS] 
-matvec(CRS)	float	1000	1000	0.0247527	0.00654473	
-matvec(CRS)	float	10000	10000	6.5354e-06	247.881	
-matvec(CRS)	float	100000	100000	6.9648e-06	2325.98	
-matvec(CRS)	float	1000000	1000000	7.022e-06	23070.4	
-matvec(CRS)	double	1000	1000	7.5742e-06	21.3884	
-matvec(CRS)	double	10000	10000	6.8681e-06	235.873	
-matvec(CRS)	double	100000	100000	1.15841e-05	1398.47	
-matvec(CRS)	double	1000000	1000000	7.7577e-06	20882.5	

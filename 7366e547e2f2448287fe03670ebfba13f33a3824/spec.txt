@@ -1,7 +1,0 @@
-"physical_cpu" 	 1
-"cpu" 	 "Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz"
-"cores" 	 4
-"simd" 	 "AVX2"
-"memory" 	 "8G"
-"gpu" 	 ""
-"gcc" 	 "gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"

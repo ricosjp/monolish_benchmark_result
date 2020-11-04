@@ -1,4 +1,0 @@
-func	prec	M	N	time[sec]	perf[GFLOPS] 
-matadd(CRS,CRS,CRS)	float	1000	1000	0.00146174	0.110827	
-matadd(CRS,CRS,CRS)	float	10000	10000	0.0063486	0.255174	
-matadd(CRS,CRS,CRS)	float	100000	100000	0.0447319	0.362157	
