@@ -1,0 +1,9 @@
+func	prec	M	N	time[sec]
+convert(COO,CRS)	float	1000	1000	0.000662533	
+convert(COO,CRS)	float	10000	10000	0.00659031	
+convert(COO,CRS)	float	100000	100000	0.0736592	
+convert(COO,CRS)	float	1000000	1000000	0.717294	
+convert(COO,CRS)	double	1000	1000	0.000367541	
+convert(COO,CRS)	double	10000	10000	0.00530316	
+convert(COO,CRS)	double	100000	100000	0.103697	
+convert(COO,CRS)	double	1000000	1000000	1.01883	
