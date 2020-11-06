@@ -1,0 +1,28 @@
+image: ghcr.io/ricosjp/allgebra/cuda10_2/mkl:20.10.0
+
+stages:
+    - create_json
+    - deploy
+
+create_json_py:
+    stage: create_json
+    script:
+        - mkdir json
+        - python3 create_json.py
+    artifacts:
+        paths:
+            - json/
+
+# pages:
+#     stage: deploy
+#     script:
+#         - rm -rf public html
+#         - doxygen Doxyfile
+#         - mv html public
+#         - cp -r test/logger/logging/*.html public/
+#     artifacts:
+#         paths:
+#             - public
+#         expire_in: 20min
+#     only:
+#         - master
