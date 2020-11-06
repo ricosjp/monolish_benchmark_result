@@ -1,4 +1,4 @@
-image: ghcr.io/ricosjp/allgebra/cuda10_2/mkl:20.10.0
+image: ghcr.io/ricosjp/allgebra/cuda10_2/mkl:20.10.1
 
 stages:
     - create_json
