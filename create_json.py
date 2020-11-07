@@ -1,5 +1,6 @@
 import sys
 import os
+import shutil
 import pandas
 import json
 
@@ -8,8 +9,8 @@ VERSION_TAG="version"
 ARCH_TAG="arch"
 
 INPUT_DIR = "./data/"
-OUTPUT_DIR = "./json/"
-OUTPUT="data.json"
+OUTPUT_DIR = "./scripts/"
+OUTPUT="json_data.js"
 
 # get_arch
 def get_arch(filename):
@@ -43,23 +44,42 @@ for version in versions:
             #data = version_data # for test
 
 data.reset_index(inplace=True)
+#json_data = data.to_json(OUTPUT_DIR+OUTPUT)
 
-data.to_json(OUTPUT_DIR+OUTPUT)
+#clean and create new dir
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+shutil.rmtree(OUTPUT_DIR)
+os.makedirs(OUTPUT_DIR)
+
+# output data
+#json_data = data.to_json()
+    #print(json_data, file=f, end="")
+with open(OUTPUT_DIR+OUTPUT, "a") as f:
+    print("var json_data = ", file=f, end="")
+    json.dump(data.to_json(), f)
+    print(";", file=f)
+
 data.to_html("check_result.html")
 
-# create type keys
+# create and output type keys
 keys=["version", "func", "arch", "prec"]
 
 for key in keys:
-    fp = open(OUTPUT_DIR+key+"_list.json", 'w')
-    json.dump(data[key].dropna().unique().tolist(), fp)
+    with open(OUTPUT_DIR+OUTPUT, 'a') as f:
+        print("var " + key + " = ", file=f, end="")
+        json.dump(data[key].dropna().unique().tolist(), f)
+        print(";", file=f)
 
 # create size keys
 ## vector
-fp = open(OUTPUT_DIR+"vector_size"+"_list.json", 'w')
-json.dump(data["size"].dropna().unique().tolist(), fp)
+with open(OUTPUT_DIR+OUTPUT, 'a') as f:
+    print("var " + "size" + " = ", file=f, end="")
+    json.dump(data["size"].dropna().unique().tolist(), f)
+    print(";", file=f)
 
-## matrix, only square(only read M)
-fp = open(OUTPUT_DIR+"matrix_size"+"_list.json", 'w')
-json.dump(data["M"].dropna().unique().tolist(), fp)
+## create matrix size keys, only square(only read M)
+with open(OUTPUT_DIR+OUTPUT, 'a') as f:
+    print("var " + "M" + " = ", file=f, end="")
+    json.dump(data["M"].dropna().unique().tolist(), f)
+    print(";", file=f)
 
