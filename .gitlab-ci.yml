@@ -7,7 +7,6 @@ stages:
 create_json_py:
     stage: create_json
     script:
-        - mkdir json
         - python3 create_json.py
     artifacts:
         paths:
