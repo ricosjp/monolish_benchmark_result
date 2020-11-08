@@ -52,11 +52,11 @@ shutil.rmtree(OUTPUT_DIR)
 os.makedirs(OUTPUT_DIR)
 
 # output data
-#json_data = data.to_json()
-    #print(json_data, file=f, end="")
+#json_data = data.to_json("a.json")
+#print(json_data, file=f, end="")
 with open(OUTPUT_DIR+OUTPUT, "a") as f:
     print("const json_data = ", file=f, end="")
-    json.dump(data.to_json(), f)
+    print(data.to_json(), file=f, end="")
     print(";", file=f)
 
 data.to_html("check_result.html")
