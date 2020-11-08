@@ -9,7 +9,7 @@ VERSION_TAG="version"
 ARCH_TAG="arch"
 
 INPUT_DIR = "./data/"
-OUTPUT_DIR = "./scripts/"
+OUTPUT_DIR = "./js_data/"
 OUTPUT="json_data.js"
 
 # get_arch
@@ -44,7 +44,13 @@ for version in versions:
             #data = version_data # for test
 
 data.reset_index(inplace=True)
-#json_data = data.to_json(OUTPUT_DIR+OUTPUT)
+
+# change data label
+data = data.rename(columns={'time[sec]':'time'})
+data = data.rename(columns={'perf[GFLOPS]':'perf'})
+data = data.rename(columns={'perf[GFLOPS]':'perf'})
+data = data.rename(columns={'mem[GB/s]':'memspeed'})
+
 
 #clean and create new dir
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -52,8 +58,6 @@ shutil.rmtree(OUTPUT_DIR)
 os.makedirs(OUTPUT_DIR)
 
 # output data
-#json_data = data.to_json("a.json")
-#print(json_data, file=f, end="")
 with open(OUTPUT_DIR+OUTPUT, "a") as f:
     print("const json_data = ", file=f, end="")
     print(data.to_json( orient="records" ), file=f, end="")
