@@ -10,18 +10,20 @@ create_json_py:
         - python3 create_json.py
     artifacts:
         paths:
-            - scripts/
+            - json_data/
+        expire_in: 20min
 
-# pages:
-#     stage: deploy
-#     script:
-#         - rm -rf public html
-#         - doxygen Doxyfile
-#         - mv html public
-#         - cp -r test/logger/logging/*.html public/
-#     artifacts:
-#         paths:
-#             - public
-#         expire_in: 20min
-#     only:
-#         - master
+pages:
+    stage: deploy
+    script:
+        - rm -rf public html
+        - mkdir -p public
+        - cp 0r *.html public
+        - cp -r *.js public
+        - cp -r create_json public
+    artifacts:
+        paths:
+            - public
+        expire_in: 20min
+    only:
+        - master
