@@ -22,15 +22,23 @@ const search_axpy_data = (func, arch, precision) => {
 const create_func_checkbox = () => {
 
     // checkbox func
+    let func_msg = document.createElement('h3');
+    func_msg.innerHTML = '関数名 (複数選択可)';
+    document.body.appendChild(func_msg);
+
     let p1 = document.createElement('p');
-    p1.innerHTML = '<form name = "select_func_form">';
+    p1.innerHTML += '<form name = "select_func_form">';
     for (const a in func_list) {
-        p.innerHTML += '<input type="checkbox" name="checked_func" value=' + func_list[a] + '>'+func_list[a]+'</input>';
+        p1.innerHTML += '<input type="checkbox" name="checked_func" value=' + func_list[a] + '>'+func_list[a]+'</input>';
     }
     p1.innerHTML += '</select_func_form>';
     document.body.appendChild(p1);
 
     // checkbox arch
+    let arch_msg = document.createElement('h3');
+    arch_msg.innerHTML = 'Architecture (複数選択可, 選ばなければすべて)';
+    document.body.appendChild(arch_msg);
+
     let p2 = document.createElement('p');
     p2.innerHTML = '<form name = "select_arch_form">';
     for (const a in arch_list) {
@@ -39,7 +47,11 @@ const create_func_checkbox = () => {
     p2.innerHTML += '</select_arch_form>';
     document.body.appendChild(p2);
 
-    // checkbox func
+    // checkbox prec
+    let prec_msg = document.createElement('h3');
+    prec_msg.innerHTML = 'Precision (複数選択可, 選ばなければすべて)';
+    document.body.appendChild(prec_msg);
+
     let p3 = document.createElement('p');
     p3.innerHTML = '<form name = "select_prec_form">';
     for (const a in prec_list) {
@@ -53,7 +65,7 @@ const create_func_checkbox = () => {
 };
 
 const clickBtn = () => {
-	const funcs = [];
+	let funcs = [];
 	const checked_func = document.getElementsByName("checked_func");
     for (let i=0; i<checked_func.length; i++){
         if (checked_func[i].checked){
@@ -61,20 +73,26 @@ const clickBtn = () => {
         }
     }
 
-	const archs = [];
+	let archs = [];
 	const checked_arch = document.getElementsByName("checked_arch");
     for (let i=0; i<checked_arch.length; i++){
         if (checked_arch[i].checked){
             archs.push(checked_arch[i].value);
         }
     }
+    if(archs.length==0){
+        archs = arch_list;
+    }
 
-	const precs = [];
+	let precs = [];
 	const checked_prec = document.getElementsByName("checked_prec");
     for (let i=0; i<checked_prec.length; i++){
         if (checked_prec[i].checked){
             precs.push(checked_prec[i].value);
         }
+    }
+    if(precs.length==0){
+        precs = arch_list;
     }
 
     plot_result(funcs, archs, precs);
@@ -95,15 +113,12 @@ const plot_result = (funcs, archs, precs) =>{
             type: 'log',
             autorange: 'true'
         },
-        width: 800,
-        height: 800,
-        margin: {
-            l: 50,
-            r: 50,
-            b: 100,
-            t: 100,
-            pad: 4
-        },
+        width: 700,
+        height: 700,
+        automargin: true,
+        legend:{
+            orientation: 'h'
+        }
     };
 
     const config = {};
@@ -134,6 +149,7 @@ const plot_result = (funcs, archs, precs) =>{
 let p = document.createElement('p');
  
 p.innerHTML = '<button onclick="create_func_checkbox()">Start</button>';
+p.innerHTML += '<br>';
 
 document.body.appendChild(p);
 
