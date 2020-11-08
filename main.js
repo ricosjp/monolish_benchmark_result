@@ -34,39 +34,23 @@ const create_func_checkbox = () => {
 };
 
 const clickBtn = () => {
-	const arr1 = [];
+	const funcs = [];
 	const checked_func = document.getElementsByName("checked_func");
 
     for (let i=0; i<checked_func.length; i++){
         if (checked_func[i].checked){
-            plot_result(checked_func[i].value);
+            funcs.push(checked_func[i].value);
         }
     }
+    plot_result(funcs);
 
 };
 
-const plot_result = (func_name) =>{
-    let plot_data_double = search_axpy_data(func_name, 'double');
-    let plot_data_float = search_axpy_data(func_name, 'float');
+const plot_result = (funcs) =>{
 
-    const trace1 = {
-        x: plot_data_double[0],
-        y: plot_data_double[1],
-        name: func_name + '_double',
-        type: 'scatter'
-    };
-
-    const trace2 = {
-        x: plot_data_float[0],
-        y: plot_data_float[1],
-        name: func_name + '_float',
-        type: 'scatter'
-    };
-
-    const data = [trace1, trace2];
+    plot_data = [];
 
     const layout = {
-        title : func_name,
         yaxis: {
             title: 'Performance[GFLOPS]'
         },
@@ -74,9 +58,33 @@ const plot_result = (func_name) =>{
             title: 'Size'
         }
     };
+
     const config = {};
 
-    Plotly.newPlot('myDiv', data, layout, config);
+    // create plot data
+    for(let i=0; i< funcs.length; i++){
+        let plot_data_double = search_axpy_data(funcs[i], 'double');
+        let plot_data_float = search_axpy_data(funcs[i], 'float');
+
+        const float_data = {
+            x: plot_data_double[0],
+            y: plot_data_double[1],
+            name: funcs[i] + '_double',
+            type: 'scatter'
+        };
+
+        const double_data = {
+            x: plot_data_float[0],
+            y: plot_data_float[1],
+            name: funcs[i] + '_float',
+            type: 'scatter'
+        };
+
+        plot_data.push(float_data);
+        plot_data.push(double_data);
+    }
+
+    Plotly.newPlot('myDiv', plot_data, layout, config);
 }
 
 ///// main /////
