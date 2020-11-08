@@ -18,7 +18,7 @@ pages:
     script:
         - rm -rf public html
         - mkdir -p public
-        - cp 0r *.html public
+        - cp -r *.html public
         - cp -r *.js public
         - cp -r create_json public
     artifacts:
