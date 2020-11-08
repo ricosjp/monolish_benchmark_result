@@ -55,7 +55,7 @@ os.makedirs(OUTPUT_DIR)
 #json_data = data.to_json()
     #print(json_data, file=f, end="")
 with open(OUTPUT_DIR+OUTPUT, "a") as f:
-    print("var json_data = ", file=f, end="")
+    print("const json_data = ", file=f, end="")
     json.dump(data.to_json(), f)
     print(";", file=f)
 
@@ -66,20 +66,20 @@ keys=["version", "func", "arch", "prec"]
 
 for key in keys:
     with open(OUTPUT_DIR+OUTPUT, 'a') as f:
-        print("var " + key + " = ", file=f, end="")
+        print("const " + key + " = ", file=f, end="")
         json.dump(data[key].dropna().unique().tolist(), f)
         print(";", file=f)
 
 # create size keys
 ## vector
 with open(OUTPUT_DIR+OUTPUT, 'a') as f:
-    print("var " + "size" + " = ", file=f, end="")
+    print("const " + "size" + " = ", file=f, end="")
     json.dump(data["size"].dropna().unique().tolist(), f)
     print(";", file=f)
 
 ## create matrix size keys, only square(only read M)
 with open(OUTPUT_DIR+OUTPUT, 'a') as f:
-    print("var " + "M" + " = ", file=f, end="")
+    print("const " + "M" + " = ", file=f, end="")
     json.dump(data["M"].dropna().unique().tolist(), f)
     print(";", file=f)
 
