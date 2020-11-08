@@ -16,7 +16,7 @@ json:
         - master
 
 
-benchmark_page:
+pages:
     stage: deploy
     script:
         - rm -rf public html
