@@ -20,7 +20,7 @@ pages:
         - mkdir -p public
         - cp -r *.html public
         - cp -r *.js public
-        - cp -r create_json public
+        - cp -r json_data/ public
     artifacts:
         paths:
             - public
