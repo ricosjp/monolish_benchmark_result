@@ -6,11 +6,11 @@ const search_axpy_data = (func, precision) => {
     
     for(let i=0; i<json_data.length; i++){
         if( json_data[i].func == func && json_data[i].arch == arch && json_data[i].version == version && json_data[i].prec == precision) {
-            if(json_data[i].size=='null'){
-                x.push(json_data[i].size);
+            if(json_data[i].size==null){
+                x.push(json_data[i].M);
             }
             else{
-                x.push(json_data[i].M);
+                x.push(json_data[i].size);
             }
             y.push(json_data[i].perf);
         }
