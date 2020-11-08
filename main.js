@@ -92,7 +92,7 @@ const clickBtn = () => {
         }
     }
     if(precs.length==0){
-        precs = arch_list;
+        precs = prec_list;
     }
 
     plot_result(funcs, archs, precs);
