@@ -1,17 +1,29 @@
 image: ghcr.io/ricosjp/allgebra/cuda10_2/mkl:20.10.1
 
 stages:
+    - create_json
     - deploy
+
+json:
+    stage: create_json
+    script:
+        - python3 create_json.py
+    artifacts:
+        paths:
+            - js_data
+        expire_in: 20min
+    only:
+        - master
+
 
 benchmark_page:
     stage: deploy
     script:
-        - python3 create_json.py
         - rm -rf public html
-        - mkdir -p public
-        - cp -r *.html public
-        - cp -r *.js public
-        - cp -r js_data/ public
+        - mkdir -p public/
+        - cp -r *.html public/
+        - cp -r *.js public/
+        - cp -r js_data/ public/
     artifacts:
         paths:
             - public
