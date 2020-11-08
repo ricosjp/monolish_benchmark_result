@@ -87,10 +87,13 @@ const plot_result = (funcs, archs, precs) =>{
 
     const layout = {
         yaxis: {
-            title: 'Performance[GFLOPS]'
+            title: 'Performance[GFLOPS]',
+            autorange: 'true'
         },
         xaxis:{
-            title: 'Size'
+            title: 'Size',
+            type: 'log',
+            autorange: 'true'
         }
     };
 
