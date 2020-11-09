@@ -43,6 +43,11 @@ const create_choice1 = () => {
 
     if(document.getElementById("choice_area1") == null){
 
+        // delete other choice
+        if(document.getElementById("choice_area2") != null){
+            document.getElementById("choice_area2").remove();
+        }
+
         let text = '';
 
         // create menu
@@ -61,14 +66,15 @@ const create_choice1 = () => {
         text += '<h3>Version</h3>';
         text += create_pulldown('version', version_list);
 
+        // plot button
+        text += '<br><input type="button" value="Plot!" onclick="PlotBtn1()"/>'
+
         choice_area.innerHTML += text;
+
 
         document.body.appendChild(choice_area);
 
         // create plot button
-        let e = document.createElement('p');
-        e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn1()"/>'
-        document.body.appendChild(e);
     }
 };
 
@@ -86,16 +92,21 @@ const create_choice2 = () => {
 
     if(document.getElementById("choice_area2") == null){
 
-    let text = '';
+        // delete other choice
+        if(document.getElementById("choice_area1") != null){
+            document.getElementById("choice_area1").remove();
+        }
 
-    let choice_area = document.createElement('div');
-    choice_area.id = 'choice_area2'
+        let text = '';
 
-    text += '<h3>きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ</h3>';
-    text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtn2()"/>';
+        let choice_area = document.createElement('div');
+        choice_area.id = 'choice_area2'
 
-    choice_area.innerHTML+=text;
-    document.body.appendChild(choice_area);
+        text += '<h3>きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ</h3>';
+        text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtn2()"/>';
+
+        choice_area.innerHTML+=text;
+        document.body.appendChild(choice_area);
     }
 };
 
