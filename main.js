@@ -1,36 +1,26 @@
 const create_choice1 = () => {
-    // checkbox func
-    let func_msg = document.createElement('h3');
-    func_msg.innerHTML = '関数名 (複数選択可)';
-    document.body.appendChild(func_msg);
+    let text = '';
 
-    let func_box = document.createElement('p');
-    create_checkbox(func_box, 'func', func_list);
+    // create menu
+    let choice_area = document.createElement('div');
 
-    // checkbox arch
-    let arch_msg = document.createElement('h3');
-    arch_msg.innerHTML = 'Architecture (複数選択可, 選ばなければすべて)';
-    document.body.appendChild(arch_msg);
+    text += '<h3>Function (複数選択可)</h3>';
+    text += create_checkbox('func', func_list);
 
-    let arch_box = document.createElement('p');
-    create_checkbox(arch_box, 'arch', arch_list);
+    text += '<h3>Archtecture (複数選択可, 選ばなければすべて)</h3>';
+    text += create_checkbox('arch', arch_list);
 
-    // checkbox prec
-    let prec_msg = document.createElement('h3');
-    prec_msg.innerHTML = 'Precision (複数選択可, 選ばなければすべて)';
-    document.body.appendChild(prec_msg);
+    text += '<h3>Precision (複数選択可, 選ばなければすべて)</h3>';
+    text += create_checkbox('prec', arch_list);
 
-    let prec_box = document.createElement('p');
-    create_checkbox(prec_box, 'prec', prec_list);
+    text += '<h3>Version</h3>';
+    text += create_pulldown('version', version_list);
 
-    // pulldown version
-    let version_msg = document.createElement('h3');
-    version_msg.innerHTML = 'Version';
-    document.body.appendChild(version_msg);
+    choice_area.innerHTML += text;
 
-    let version_menu = document.createElement('p');
-    create_pulldown(version_menu, 'version', version_list);
+    document.body.appendChild(choice_area);
 
+    // create plot button
     let e = document.createElement('p');
     e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn1()"/>'
     document.body.appendChild(e);
@@ -72,9 +62,13 @@ const PlotBtn1 = () => {
 
 	const version = document.getElementById("select_version").value;
 
+    // plot!!
     plot_result(funcs, archs, precs, version);
 
 };
+
+////////////////////////////////////////////
+////////////////////////////////////////////
 
 const create_choice2 = () => {
     // checkbox func
@@ -86,6 +80,7 @@ const create_choice2 = () => {
     e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn2()"/>'
     document.body.appendChild(e);
 };
+
 
 const PlotBtn2 = () => {
     let func_msg = document.createElement('h3');

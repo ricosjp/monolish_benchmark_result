@@ -1,24 +1,24 @@
-const create_checkbox = (e, name, list) => {
-    let text = '<form name = "select_' + name + 'form">';
+const create_checkbox = (name, list) => {
+    let text = '<p>'
+    text += '<form name = "select_' + name + 'form">';
     for (const a in list) {
         text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + list[a] + '>' + list[a]+'</input>';
     }
     text += '</select_' + name +'_form>';
+    text += '</p>'
 
-    e.innerHTML = text
-
-    document.body.appendChild(e);
+    return text;
 }
 
-const create_pulldown = (e, name, list) => {
+const create_pulldown = (name, list) => {
 
-    let text = '<select name = "select_' + name + '" id = "select_' + name + '">';
+    let text = '<p>';
+    text += '<select name = "select_' + name + '" id = "select_' + name + '">';
     for (const a in list) {
         text += '<option value=' + list[a] + '>' + list[a] + ' </option>';
     }
     text += '</select>';
+    text += '</p>';
 
-    e.innerHTML = text;
-
-    document.body.appendChild(e);
+    return text;
 }
