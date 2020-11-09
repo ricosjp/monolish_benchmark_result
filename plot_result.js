@@ -25,7 +25,7 @@ const plot_result = (funcs, archs, precs, version) =>{
     const layout = {
         title: 'version: ' + version,
         yaxis: {
-            title: 'Performance[GFLOPS]',
+            title: 'Performance [GFLOPS]',
             autorange: 'true'
         },
         xaxis:{
@@ -63,4 +63,13 @@ const plot_result = (funcs, archs, precs, version) =>{
     }
 
     Plotly.newPlot('myDiv', plot_data, layout, config);
+
+    if(document.getElementById("version_print") != null){
+        document.getElementById("version_print").remove()
+    }
+
+    let tmp = document.createElement('h3');
+    tmp.id = 'version_print'
+    tmp.innerHTML += 'This commit is <a href="https://gitlab.ritc.jp/ricos/monolish/-/commit/' + version + '" target="_blank">here</a>';
+    document.body.insertBefore(tmp, myDiv);
 }
