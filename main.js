@@ -1,5 +1,4 @@
-const search_axpy_data = (func, arch, precision) => {
-    const version = '74226f9cf5033de9ba8be64a1b37cbfdf1a33733'
+const search_data = (func, arch, precision, version) => {
     let x = [];
     let y = [];
     
@@ -14,57 +13,78 @@ const search_axpy_data = (func, arch, precision) => {
             y.push(json_data[i].perf);
         }
     }
-    result = [x, y]
+    result = [x, y, version]
 
     return result;
 };
 
-const create_func_checkbox = () => {
+const create_checkbox = (e, name, list) => {
+    let text = '<form name = "select_' + name + 'form">';
+    for (const a in list) {
+        text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + list[a] + '>' + list[a]+'</input>';
+    }
+    text += '</select_' + name +'_form>';
+
+    e.innerHTML = text
+
+    document.body.appendChild(e);
+}
+
+const create_pulldown = (e, name, list) => {
+
+    let text = '<select name = "select_' + name + '" id = "select_' + name + '">';
+    for (const a in list) {
+        text += '<option value=' + list[a] + '>' + list[a] + ' </option>';
+    }
+    text += '</select>';
+
+    e.innerHTML = text;
+
+    document.body.appendChild(e);
+}
+
+const create_choice = () => {
 
     // checkbox func
     let func_msg = document.createElement('h3');
     func_msg.innerHTML = '関数名 (複数選択可)';
     document.body.appendChild(func_msg);
 
-    let p1 = document.createElement('p');
-    p1.innerHTML += '<form name = "select_func_form">';
-    for (const a in func_list) {
-        p1.innerHTML += '<input type="checkbox" name="checked_func" value=' + func_list[a] + '>'+func_list[a]+'</input>';
-    }
-    p1.innerHTML += '</select_func_form>';
-    document.body.appendChild(p1);
+    let func_box = document.createElement('p');
+    create_checkbox(func_box, 'func', func_list);
 
     // checkbox arch
     let arch_msg = document.createElement('h3');
     arch_msg.innerHTML = 'Architecture (複数選択可, 選ばなければすべて)';
     document.body.appendChild(arch_msg);
 
-    let p2 = document.createElement('p');
-    p2.innerHTML = '<form name = "select_arch_form">';
-    for (const a in arch_list) {
-        p2.innerHTML += '<input type="checkbox" name="checked_arch" value=' + arch_list[a] + '>'+arch_list[a]+'</input>';
-    }
-    p2.innerHTML += '</select_arch_form>';
-    document.body.appendChild(p2);
+    let arch_box = document.createElement('p');
+    create_checkbox(arch_box, 'arch', arch_list);
 
     // checkbox prec
     let prec_msg = document.createElement('h3');
     prec_msg.innerHTML = 'Precision (複数選択可, 選ばなければすべて)';
     document.body.appendChild(prec_msg);
 
-    let p3 = document.createElement('p');
-    p3.innerHTML = '<form name = "select_prec_form">';
-    for (const a in prec_list) {
-        p3.innerHTML += '<input type="checkbox" name="checked_prec" value=' + prec_list[a] + '>'+prec_list[a]+'</input>';
-    }
-    p3.innerHTML += '</select_prec_form>';
-    p3.innerHTML += '<br>';
-    p3.innerHTML += '<br>';
-    p3.innerHTML += '<input type="button" value="Plot!" onclick="clickBtn()"/>'
-    document.body.appendChild(p3);
+    let prec_box = document.createElement('p');
+    create_checkbox(prec_box, 'prec', prec_list);
+
+    // pulldown version
+    let version_msg = document.createElement('h3');
+    version_msg.innerHTML = 'Version';
+    document.body.appendChild(version_msg);
+
+    let version_menu = document.createElement('p');
+    create_pulldown(version_menu, 'version', version_list);
+
+    let e = document.createElement('p');
+    e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn()"/>'
+    document.body.appendChild(e);
+
 };
 
-const clickBtn = () => {
+const PlotBtn = () => {
+    //get func
 	let funcs = [];
 	const checked_func = document.getElementsByName("checked_func");
     for (let i=0; i<checked_func.length; i++){
@@ -73,6 +93,7 @@ const clickBtn = () => {
         }
     }
 
+    //get arch
 	let archs = [];
 	const checked_arch = document.getElementsByName("checked_arch");
     for (let i=0; i<checked_arch.length; i++){
@@ -84,6 +105,7 @@ const clickBtn = () => {
         archs = arch_list;
     }
 
+    //get prec
 	let precs = [];
 	const checked_prec = document.getElementsByName("checked_prec");
     for (let i=0; i<checked_prec.length; i++){
@@ -95,15 +117,18 @@ const clickBtn = () => {
         precs = prec_list;
     }
 
-    plot_result(funcs, archs, precs);
+	const version = document.getElementById("select_version").value;
+
+    plot_result(funcs, archs, precs, version);
 
 };
 
-const plot_result = (funcs, archs, precs) =>{
+const plot_result = (funcs, archs, precs, version) =>{
 
     let plot_data = [];
 
     const layout = {
+        title: 'version: ' + version,
         yaxis: {
             title: 'Performance[GFLOPS]',
             autorange: 'true'
@@ -128,7 +153,7 @@ const plot_result = (funcs, archs, precs) =>{
         for(let j=0; j< archs.length; j++){
             for(let k=0; k< precs.length; k++){
 
-                const plot_element_data = search_axpy_data(funcs[i], archs[j], precs[k]);
+                const plot_element_data = search_data(funcs[i], archs[j], precs[k], version);
 
                 const plot_element = {
                     x: plot_element_data[0],
@@ -148,8 +173,7 @@ const plot_result = (funcs, archs, precs) =>{
 ///// main /////
 let p = document.createElement('p');
  
-p.innerHTML = '<button onclick="create_func_checkbox()">Start</button>';
-p.innerHTML += '<br>';
+p.innerHTML = '<button onclick="create_choice()">Start</button><br>';
 
 document.body.appendChild(p);
 
