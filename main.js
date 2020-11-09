@@ -1,31 +1,3 @@
-const create_choice1 = () => {
-    let text = '';
-
-    // create menu
-    let choice_area = document.createElement('div');
-
-    text += '<h3>Function (複数選択可)</h3>';
-    text += create_checkbox('func', func_list);
-
-    text += '<h3>Archtecture (複数選択可, 選ばなければすべて)</h3>';
-    text += create_checkbox('arch', arch_list);
-
-    text += '<h3>Precision (複数選択可, 選ばなければすべて)</h3>';
-    text += create_checkbox('prec', arch_list);
-
-    text += '<h3>Version</h3>';
-    text += create_pulldown('version', version_list);
-
-    choice_area.innerHTML += text;
-
-    document.body.appendChild(choice_area);
-
-    // create plot button
-    let e = document.createElement('p');
-    e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn1()"/>'
-    document.body.appendChild(e);
-};
-
 const PlotBtn1 = () => {
     //get func
 	let funcs = [];
@@ -67,27 +39,65 @@ const PlotBtn1 = () => {
 
 };
 
-////////////////////////////////////////////
-////////////////////////////////////////////
+const create_choice1 = () => {
 
-const create_choice2 = () => {
-    // checkbox func
-    let func_msg = document.createElement('h3');
-    func_msg.innerHTML = 'きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ';
-    document.body.appendChild(func_msg);
+    if(document.getElementById("choice_area1") == null){
 
-    let e = document.createElement('p');
-    e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn2()"/>'
-    document.body.appendChild(e);
+        let text = '';
+
+        // create menu
+        let choice_area = document.createElement('div');
+        choice_area.id = 'choice_area1'
+
+        text += '<h3>Function (複数選択可)</h3>';
+        text += create_checkbox('func', func_list);
+
+        text += '<h3>Archtecture (複数選択可, 選ばなければすべて)</h3>';
+        text += create_checkbox('arch', arch_list);
+
+        text += '<h3>Precision (複数選択可, 選ばなければすべて)</h3>';
+        text += create_checkbox('prec', arch_list);
+
+        text += '<h3>Version</h3>';
+        text += create_pulldown('version', version_list);
+
+        choice_area.innerHTML += text;
+
+        document.body.appendChild(choice_area);
+
+        // create plot button
+        let e = document.createElement('p');
+        e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn1()"/>'
+        document.body.appendChild(e);
+    }
 };
 
-
+////////////////////////////////////////////
+////////////////////////////////////////////
 const PlotBtn2 = () => {
+
     let func_msg = document.createElement('h3');
     func_msg.innerHTML = 'つかれちゃったからプロットはおやすみ';
     document.body.appendChild(func_msg);
+
 };
 
+const create_choice2 = () => {
+
+    if(document.getElementById("choice_area2") == null){
+
+    let text = '';
+
+    let choice_area = document.createElement('div');
+    choice_area.id = 'choice_area2'
+
+    text += '<h3>きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ</h3>';
+    text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtn2()"/>';
+
+    choice_area.innerHTML+=text;
+    document.body.appendChild(choice_area);
+    }
+};
 
 ///// main /////
 let p = document.createElement('p');
