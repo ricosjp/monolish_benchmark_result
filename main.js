@@ -1,50 +1,4 @@
-const search_data = (func, arch, precision, version) => {
-    let x = [];
-    let y = [];
-    
-    for(let i=0; i<json_data.length; i++){
-        if( json_data[i].func == func && json_data[i].arch == arch && json_data[i].version == version && json_data[i].prec == precision) {
-            if(json_data[i].size==null){
-                x.push(json_data[i].M);
-            }
-            else{
-                x.push(json_data[i].size);
-            }
-            y.push(json_data[i].perf);
-        }
-    }
-    result = [x, y, version]
-
-    return result;
-};
-
-const create_checkbox = (e, name, list) => {
-    let text = '<form name = "select_' + name + 'form">';
-    for (const a in list) {
-        text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + list[a] + '>' + list[a]+'</input>';
-    }
-    text += '</select_' + name +'_form>';
-
-    e.innerHTML = text
-
-    document.body.appendChild(e);
-}
-
-const create_pulldown = (e, name, list) => {
-
-    let text = '<select name = "select_' + name + '" id = "select_' + name + '">';
-    for (const a in list) {
-        text += '<option value=' + list[a] + '>' + list[a] + ' </option>';
-    }
-    text += '</select>';
-
-    e.innerHTML = text;
-
-    document.body.appendChild(e);
-}
-
-const create_choice = () => {
-
+const create_choice1 = () => {
     // checkbox func
     let func_msg = document.createElement('h3');
     func_msg.innerHTML = '関数名 (複数選択可)';
@@ -78,12 +32,11 @@ const create_choice = () => {
     create_pulldown(version_menu, 'version', version_list);
 
     let e = document.createElement('p');
-    e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn()"/>'
+    e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn1()"/>'
     document.body.appendChild(e);
-
 };
 
-const PlotBtn = () => {
+const PlotBtn1 = () => {
     //get func
 	let funcs = [];
 	const checked_func = document.getElementsByName("checked_func");
@@ -123,57 +76,29 @@ const PlotBtn = () => {
 
 };
 
-const plot_result = (funcs, archs, precs, version) =>{
+const create_choice2 = () => {
+    // checkbox func
+    let func_msg = document.createElement('h3');
+    func_msg.innerHTML = 'きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ';
+    document.body.appendChild(func_msg);
 
-    let plot_data = [];
+    let e = document.createElement('p');
+    e.innerHTML += '<br><input type="button" value="Plot!" onclick="PlotBtn2()"/>'
+    document.body.appendChild(e);
+};
 
-    const layout = {
-        title: 'version: ' + version,
-        yaxis: {
-            title: 'Performance[GFLOPS]',
-            autorange: 'true'
-        },
-        xaxis:{
-            title: 'Size',
-            type: 'log',
-            autorange: 'true'
-        },
-        width: 700,
-        height: 700,
-        automargin: true,
-        legend:{
-            orientation: 'h'
-        }
-    };
+const PlotBtn2 = () => {
+    let func_msg = document.createElement('h3');
+    func_msg.innerHTML = 'つかれちゃったからプロットはおやすみ';
+    document.body.appendChild(func_msg);
+};
 
-    const config = {};
-
-    // create plot data
-    for(let i=0; i< funcs.length; i++){
-        for(let j=0; j< archs.length; j++){
-            for(let k=0; k< precs.length; k++){
-
-                const plot_element_data = search_data(funcs[i], archs[j], precs[k], version);
-
-                const plot_element = {
-                    x: plot_element_data[0],
-                    y: plot_element_data[1],
-                    name: funcs[i] + '_' + precs[k] + '_' + archs[j],
-                    type: 'scatter'
-                };
-
-                plot_data.push(plot_element);
-            }
-        }
-    }
-
-    Plotly.newPlot('myDiv', plot_data, layout, config);
-}
 
 ///// main /////
 let p = document.createElement('p');
  
-p.innerHTML = '<button onclick="create_choice()">Start</button><br>';
+p.innerHTML += '<button onclick="create_choice1()">折れ線グラフかくよ</button>  ';
+p.innerHTML += '<button onclick="create_choice2()">きゅっきゅっ</button>  ';
+p.innerHTML += '<br>';
 
 document.body.appendChild(p);
-
