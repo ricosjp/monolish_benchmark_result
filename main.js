@@ -61,7 +61,7 @@ const create_choice1 = () => {
         text += create_checkbox('arch', arch_list);
 
         text += '<h3>Precision (複数選択可, 選ばなければすべて)</h3>';
-        text += create_checkbox('prec', arch_list);
+        text += create_checkbox('prec', prec_list);
 
         text += '<h3>Version</h3>';
         text += create_pulldown('version', version_list);
