@@ -7,7 +7,8 @@ pages:
     stage: deploy
     script:
         - python3 create_json.py
-        - rm -rf public html
+        - ls
+        - rm -rf public
         - mkdir -p public/
         - cp -r *.html public/
         - cp -r *.js public/
