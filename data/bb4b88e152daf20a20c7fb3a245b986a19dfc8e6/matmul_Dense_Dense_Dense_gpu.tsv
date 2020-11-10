@@ -1,0 +1,11 @@
+func	prec	M	N	K	time[sec]	perf[GFLOPS]
+matmul(Dense,Dense,Dense)	float	1000	1000	1000	0.0181311	110.307
+matmul(Dense,Dense,Dense)	float	2000	2000	2000	0.0104699	1528.2
+matmul(Dense,Dense,Dense)	float	3000	3000	3000	0.0276397	1953.71
+matmul(Dense,Dense,Dense)	float	4000	4000	4000	0.0603511	2120.92
+matmul(Dense,Dense,Dense)	float	5000	5000	5000	0.120597	2073.03
+matmul(Dense,Dense,Dense)	double	1000	1000	1000	0.0275973	72.4707
+matmul(Dense,Dense,Dense)	double	2000	2000	2000	0.208568	76.7135
+matmul(Dense,Dense,Dense)	double	3000	3000	3000	0.681766	79.206
+matmul(Dense,Dense,Dense)	double	4000	4000	4000	1.62309	78.862
+matmul(Dense,Dense,Dense)	double	5000	5000	5000	3.18613	78.4651
