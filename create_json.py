@@ -5,11 +5,12 @@ import pandas
 import json
 
 SPEC_FILE_TAG="spec"
+VERSION_FILE_TAG="version_info"
 VERSION_TAG="version"
 ARCH_TAG="arch"
 
 INPUT_DIR = "./data/"
-OUTPUT_DIR = "./js_data/"
+OUTPUT_DIR = "js_data/"
 OUTPUT="json_data.js"
 
 # get_arch
@@ -37,11 +38,12 @@ for version in versions:
     version_files = os.listdir(path+version)
     for version_file in version_files:
         if SPEC_FILE_TAG not in version_file:
-            version_data = pandas.read_table(path+version+"/"+version_file)
-            version_data.insert(0, VERSION_TAG, version)
-            version_data.insert(1, ARCH_TAG, get_arch(version_file))
-            data = pandas.concat([data, version_data])
-            #data = version_data # for test
+            if VERSION_FILE_TAG not in version_file:
+                version_data = pandas.read_table(path+version+"/"+version_file)
+                version_data.insert(0, VERSION_TAG, version)
+                version_data.insert(1, ARCH_TAG, get_arch(version_file))
+                data = pandas.concat([data, version_data], sort=True)
+                #data = version_data # for test
 
 data.reset_index(inplace=True)
 
@@ -86,4 +88,3 @@ with open(OUTPUT_DIR+OUTPUT, 'a') as f:
     print("const " + "Msize_list" + " = ", file=f, end="")
     json.dump(data["M"].dropna().unique().tolist(), f)
     print(";", file=f)
-
