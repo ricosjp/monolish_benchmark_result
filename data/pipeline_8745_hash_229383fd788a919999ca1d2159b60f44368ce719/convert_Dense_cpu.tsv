@@ -1,0 +1,11 @@
+func	prec	M	N	time[sec]
+convert(COO,Dense)	float	1000	1000	0.00235035
+convert(COO,Dense)	float	2000	2000	0.00574177
+convert(COO,Dense)	float	3000	3000	0.016309
+convert(COO,Dense)	float	4000	4000	0.0287545
+convert(COO,Dense)	float	5000	5000	0.043052
+convert(COO,Dense)	double	1000	1000	0.00282919
+convert(COO,Dense)	double	2000	2000	0.00921202
+convert(COO,Dense)	double	3000	3000	0.0300656
+convert(COO,Dense)	double	4000	4000	0.0518895
+convert(COO,Dense)	double	5000	5000	0.0802291

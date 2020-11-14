@@ -1,0 +1,11 @@
+func	prec	M	N	time[sec]	perf[GFLOPS]	mem[GB/s]
+matadd(Dense,Dense,Dense)	float	1000	1000	0.00427129	0.234122	2.80946
+matadd(Dense,Dense,Dense)	float	2000	2000	0.0137932	0.289998	3.47997
+matadd(Dense,Dense,Dense)	float	3000	3000	0.0244167	0.3686	4.4232
+matadd(Dense,Dense,Dense)	float	4000	4000	0.0437378	0.365816	4.38979
+matadd(Dense,Dense,Dense)	float	5000	5000	0.0679345	0.368001	4.41602
+matadd(Dense,Dense,Dense)	double	1000	1000	0.00415639	0.240593	5.77424
+matadd(Dense,Dense,Dense)	double	2000	2000	0.0141197	0.283292	6.79901
+matadd(Dense,Dense,Dense)	double	3000	3000	0.0262693	0.342605	8.22253
+matadd(Dense,Dense,Dense)	double	4000	4000	0.0556681	0.287418	6.89802
+matadd(Dense,Dense,Dense)	double	5000	5000	0.086742	0.288211	6.91706
