@@ -1,0 +1,11 @@
+func	prec	M	N	time[sec]	perf[GFLOPS]
+m_tanh(Dense)	float	1000	1000	0.00138805	0.720434
+m_tanh(Dense)	float	2000	2000	0.0042827	0.933991
+m_tanh(Dense)	float	3000	3000	0.00949143	0.948224
+m_tanh(Dense)	float	4000	4000	0.0170512	0.938351
+m_tanh(Dense)	float	5000	5000	0.0264283	0.945957
+m_tanh(Dense)	double	1000	1000	0.00284423	0.351589
+m_tanh(Dense)	double	2000	2000	0.0113545	0.352282
+m_tanh(Dense)	double	3000	3000	0.0258778	0.347789
+m_tanh(Dense)	double	4000	4000	0.045705	0.350071
+m_tanh(Dense)	double	5000	5000	0.0715058	0.349622
