@@ -1,0 +1,11 @@
+func	prec	M	N	time[sec]	perf[GFLOPS]
+matvec(Dense)	float	1000	1000	0.0018759	1.06615
+matvec(Dense)	float	2000	2000	6.43023e-05	124.412
+matvec(Dense)	float	3000	3000	0.000204718	87.9257
+matvec(Dense)	float	4000	4000	0.00496341	6.44718
+matvec(Dense)	float	5000	5000	0.00936357	5.33985
+matvec(Dense)	double	1000	1000	0.000154002	12.9869
+matvec(Dense)	double	2000	2000	0.000171508	46.6452
+matvec(Dense)	double	3000	3000	0.0058229	3.09124
+matvec(Dense)	double	4000	4000	0.0125461	2.55059
+matvec(Dense)	double	5000	5000	0.0203967	2.45138
