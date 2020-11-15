@@ -13,6 +13,10 @@ const search_bar_data = (func, arch, precision, size, version, y_axis) => {
 
 const plot_bar = (func, arch, prec, size, y_axis) =>{
 
+    let plot_area = document.createElement('div');
+    plot_area.id = 'plot_area'
+    document.body.insertBefore(plot_area, myDiv);
+
     let y_title;
 
     if(y_axis == 'perf'){
@@ -57,7 +61,7 @@ const plot_bar = (func, arch, prec, size, y_axis) =>{
         }
     ];
 
-    Plotly.newPlot('myDiv', plot_data, layout, config);
+    Plotly.newPlot('plot_area', plot_data, layout, config);
 
     if(document.getElementById("version_print") != null){
         document.getElementById("version_print").remove()
@@ -85,20 +89,16 @@ const create_choice2 = () => {
 
     if(document.getElementById("choice_area2") == null){
 
-
-        // delete other choice
-        if(document.getElementById("choice_area1") != null){
-            document.getElementById("choice_area1").remove();
-        }
-        if(document.getElementById("choice_areaGOMA") != null){
-            document.getElementById("choice_areaGOMA").remove();
-        }
-
         let text = '';
 
         // create menu
         let choice_area = document.createElement('div');
         choice_area.id = 'choice_area2'
+
+        // delete other choice
+        delete_other_choice(choice_area.id);
+
+        text += '<h2>Difference of Versions</h2>';
 
         // y-axis
         text += '<h3>y-axis</h3>';
@@ -107,7 +107,6 @@ const create_choice2 = () => {
         // func
         text += '<h3>Function</h3>';
         text += create_pulldown('func', func_list.sort());
-        console.log(func_list.sort())
 
         // Size
         text += '<h3>Size</h3>';

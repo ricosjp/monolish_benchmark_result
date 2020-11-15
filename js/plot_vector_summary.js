@@ -13,6 +13,10 @@ const search_vector_data = (func, arch, precision, size, version, y_axis) => {
 
 const plot_vector_all = (arch, prec, size, y_axis, version) =>{
 
+    let plot_area = document.createElement('div');
+    plot_area.id = 'plot_area'
+    document.body.insertBefore(plot_area, myDiv);
+
     let y_title;
 
     if(y_axis == 'perf'){
@@ -54,7 +58,7 @@ const plot_vector_all = (arch, prec, size, y_axis, version) =>{
         }
     ];
 
-    Plotly.newPlot('myDiv', plot_data, layout, config);
+    Plotly.newPlot('plot_area', plot_data, layout, config);
 
     if(document.getElementById("version_print") != null){
         document.getElementById("version_print").remove()
@@ -80,31 +84,18 @@ const PlotBtn3 = () => {
 
 const create_choice3 = () => {
 
-    if(document.getElementById("choice_area2") == null){
-
-
-        // delete other choice
-        if(document.getElementById("choice_area1") != null){
-            document.getElementById("choice_area1").remove();
-        }
-        if(document.getElementById("choice_area3") != null){
-            document.getElementById("choice_area3").remove();
-        }
-        if(document.getElementById("choice_area4") != null){
-            document.getElementById("choice_area4").remove();
-        }
-        if(document.getElementById("choice_area5") != null){
-            document.getElementById("choice_area5").remove();
-        }
-        if(document.getElementById("choice_areaGOMA") != null){
-            document.getElementById("choice_areaGOMA").remove();
-        }
+    if(document.getElementById("choice_area3") == null){
 
         let text = '';
 
         // create menu
         let choice_area = document.createElement('div');
         choice_area.id = 'choice_area3'
+
+        // delete other choice
+        delete_other_choice(choice_area.id);
+
+        text += '<h2>Summary of Vector operations</h2>';
 
         // y-axis
         text += '<h3>y-axis</h3>';

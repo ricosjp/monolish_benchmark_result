@@ -5,6 +5,26 @@ const sort_small = (a, b) => {
     return (a < b ? -1 : 1);
 }
 
+const delete_other_choice = (mychoice) =>{
+    const choice_list = [
+        "plot_area",
+        "choice_area1",
+        "choice_area2",
+        "choice_area3",
+        "choice_area4",
+        "choice_area5",
+        "choice_areaGOMA"
+    ];
+
+    for (let choice of choice_list){
+        if(mychoice != choice){
+            if(document.getElementById(choice) != null){
+                document.getElementById(choice).remove();
+            }
+        }
+    }
+}
+
 ///////////////////////////////////////////////////////////
 
 const create_checkbox = (name, list) => {

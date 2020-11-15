@@ -20,6 +20,10 @@ const search_line_data = (func, arch, precision, version, y_axis) => {
 
 const plot_line = (funcs, archs, precs, version, y_axis) =>{
 
+    let plot_area = document.createElement('div');
+    plot_area.id = 'plot_area'
+    document.body.insertBefore(plot_area, myDiv);
+
     let plot_data = [];
     let y_title;
 
@@ -73,7 +77,7 @@ const plot_line = (funcs, archs, precs, version, y_axis) =>{
         }
     }
 
-    Plotly.newPlot('myDiv', plot_data, layout, config);
+    Plotly.newPlot('plot_area', plot_data, layout, config);
 
     if(document.getElementById("version_print") != null){
         document.getElementById("version_print").remove()
@@ -82,7 +86,7 @@ const plot_line = (funcs, archs, precs, version, y_axis) =>{
     let tmp = document.createElement('h3');
     tmp.id = 'version_print'
     tmp.innerHTML += 'This commit is <a href="https://gitlab.ritc.jp/ricos/monolish/-/commit/' + version + '" target="_blank">here</a>';
-    document.body.insertBefore(tmp, myDiv);
+    document.body.insertBefore(tmp, plot_area);
 }
 const PlotBtn1 = () => {
     //get func
@@ -138,28 +142,16 @@ const create_choice1 = () => {
 
     if(document.getElementById("choice_area1") == null){
 
-        // delete other choice
-        if(document.getElementById("choice_area2") != null){
-            document.getElementById("choice_area2").remove();
-        }
-        if(document.getElementById("choice_area3") != null){
-            document.getElementById("choice_area3").remove();
-        }
-        if(document.getElementById("choice_area4") != null){
-            document.getElementById("choice_area4").remove();
-        }
-        if(document.getElementById("choice_area5") != null){
-            document.getElementById("choice_area5").remove();
-        }
-        if(document.getElementById("choice_areaGOMA") != null){
-            document.getElementById("choice_areaGOMA").remove();
-        }
-
         let text = '';
 
         // create menu
         let choice_area = document.createElement('div');
         choice_area.id = 'choice_area1'
+
+        // delete other choice
+        delete_other_choice(choice_area.id);
+
+        text += '<h2>Plot Results</h2>';
 
         text += '<h3>y-axis</h3>';
         text += create_pulldown('yaxis', yaxis_list);

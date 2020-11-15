@@ -13,6 +13,10 @@ const search_Dense_data = (func, arch, precision, size, version, y_axis) => {
 
 const plot_Dense_all = (arch, prec, size, y_axis, version) =>{
 
+    let plot_area = document.createElement('div');
+    plot_area.id = 'plot_area'
+    document.body.insertBefore(plot_area, myDiv);
+
     let y_title;
 
     if(y_axis == 'perf'){
@@ -54,7 +58,7 @@ const plot_Dense_all = (arch, prec, size, y_axis, version) =>{
         }
     ];
 
-    Plotly.newPlot('myDiv', plot_data, layout, config);
+    Plotly.newPlot('plot_area', plot_data, layout, config);
 
     if(document.getElementById("version_print") != null){
         document.getElementById("version_print").remove()
@@ -82,29 +86,16 @@ const create_choice4 = () => {
 
     if(document.getElementById("choice_area4") == null){
 
-
-        // delete other choice
-        if(document.getElementById("choice_area1") != null){
-            document.getElementById("choice_area1").remove();
-        }
-        if(document.getElementById("choice_area2") != null){
-            document.getElementById("choice_area2").remove();
-        }
-        if(document.getElementById("choice_area3") != null){
-            document.getElementById("choice_area3").remove();
-        }
-        if(document.getElementById("choice_area5") != null){
-            document.getElementById("choice_area5").remove();
-        }
-        if(document.getElementById("choice_areaGOMA") != null){
-            document.getElementById("choice_areaGOMA").remove();
-        }
-
         let text = '';
 
         // create menu
         let choice_area = document.createElement('div');
         choice_area.id = 'choice_area4'
+
+        // delete other choice
+        delete_other_choice(choice_area.id);
+
+        text += '<h2>Summary of Dense format Matrix operations</h2>';
 
         // y-axis
         text += '<h3>y-axis</h3>';
