@@ -1,4 +1,4 @@
-const search_bar_data = (func, arch, precision, size, version, y_axis) => {
+const search_CRS_data = (func, arch, precision, size, version, y_axis) => {
     let data = [];
     
     for(let i=0; i<json_data.length; i++){
@@ -11,7 +11,7 @@ const search_bar_data = (func, arch, precision, size, version, y_axis) => {
     return null;
 };
 
-const plot_bar = (func, arch, prec, size, y_axis) =>{
+const plot_CRS_all = (arch, prec, size, y_axis, version) =>{
 
     let y_title;
 
@@ -37,17 +37,14 @@ const plot_bar = (func, arch, prec, size, y_axis) =>{
 
     const config = {};
 
+    let dataX = kind_CRS_list.sort();
+
     let dataY = [];
     // create plot data
-    for(let i=0; i< version_list.length; i++){
-                dataY.push(search_bar_data(func, arch, prec, size, version_list[i], y_axis));
+    for(let i=0; i< dataX.length; i++){
+        dataY.push(search_CRS_data(dataX[i], arch, prec, size, version, y_axis));
     }
 
-    let dataX = [];
-    for(let i=0; i< version_list.length; i++){
-        dataX.push(pipeline_list[i] + '( ' + version_list[i] + ')');
-    }
-    dataX.sort(sort_small);
 
     const plot_data = [
         {
@@ -69,26 +66,35 @@ const plot_bar = (func, arch, prec, size, y_axis) =>{
 ////////////////////////////////////
 ////////////////////////////////////
 
-const PlotBtn2 = () => {
+const PlotBtn5 = () => {
 
 	const yaxis = document.getElementById("select_yaxis").value;
-	const func = document.getElementById("select_func").value;
 	const size = document.getElementById("select_size").value;
 	const arch = document.getElementById("select_arch").value;
 	const prec = document.getElementById("select_prec").value;
+	const version = document.getElementById("select_version").value;
 
-    plot_bar(func, arch, prec, size, yaxis);
+    plot_CRS_all(arch, prec, size, yaxis, version);
 
 };
 
-const create_choice2 = () => {
+const create_choice5 = () => {
 
-    if(document.getElementById("choice_area2") == null){
+    if(document.getElementById("choice_area5") == null){
 
 
         // delete other choice
         if(document.getElementById("choice_area1") != null){
             document.getElementById("choice_area1").remove();
+        }
+        if(document.getElementById("choice_area2") != null){
+            document.getElementById("choice_area2").remove();
+        }
+        if(document.getElementById("choice_area3") != null){
+            document.getElementById("choice_area3").remove();
+        }
+        if(document.getElementById("choice_area4") != null){
+            document.getElementById("choice_area4").remove();
         }
         if(document.getElementById("choice_areaGOMA") != null){
             document.getElementById("choice_areaGOMA").remove();
@@ -98,16 +104,11 @@ const create_choice2 = () => {
 
         // create menu
         let choice_area = document.createElement('div');
-        choice_area.id = 'choice_area2'
+        choice_area.id = 'choice_area5'
 
         // y-axis
         text += '<h3>y-axis</h3>';
         text += create_pulldown('yaxis', yaxis_list);
-
-        // func
-        text += '<h3>Function</h3>';
-        text += create_pulldown('func', func_list.sort());
-        console.log(func_list.sort())
 
         // Size
         text += '<h3>Size</h3>';
@@ -122,7 +123,11 @@ const create_choice2 = () => {
         text += '<h3>Precision</h3>';
         text += create_pulldown('prec', prec_list.sort());
 
-        text += '<br><input type="button" value="Plot!" onclick="PlotBtn2()"/>'
+        // version
+        text += '<h3>Pipeline ID (Version)</h3>';
+        text += create_pulldown_with_option('version', version_list, pipeline_list);
+
+        text += '<br><input type="button" value="Plot!" onclick="PlotBtn5()"/>'
 
         choice_area.innerHTML+=text;
         document.body.appendChild(choice_area);

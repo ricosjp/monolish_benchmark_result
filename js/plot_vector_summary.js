@@ -26,7 +26,7 @@ const plot_vector_all = (arch, prec, size, y_axis, version) =>{
     }
 
     const layout = {
-        title: 'size: ' + size + 'prec: ' + prec + 'arch: ' + arch,
+        title: 'size: ' + size + ', prec: ' + prec + ', arch: ' + arch,
         yaxis: {
             title: y_title,
         },
@@ -87,6 +87,15 @@ const create_choice3 = () => {
         if(document.getElementById("choice_area1") != null){
             document.getElementById("choice_area1").remove();
         }
+        if(document.getElementById("choice_area3") != null){
+            document.getElementById("choice_area3").remove();
+        }
+        if(document.getElementById("choice_area4") != null){
+            document.getElementById("choice_area4").remove();
+        }
+        if(document.getElementById("choice_area5") != null){
+            document.getElementById("choice_area5").remove();
+        }
         if(document.getElementById("choice_areaGOMA") != null){
             document.getElementById("choice_areaGOMA").remove();
         }
@@ -95,7 +104,7 @@ const create_choice3 = () => {
 
         // create menu
         let choice_area = document.createElement('div');
-        choice_area.id = 'choice_area2'
+        choice_area.id = 'choice_area3'
 
         // y-axis
         text += '<h3>y-axis</h3>';

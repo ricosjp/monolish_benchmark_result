@@ -142,6 +142,15 @@ const create_choice1 = () => {
         if(document.getElementById("choice_area2") != null){
             document.getElementById("choice_area2").remove();
         }
+        if(document.getElementById("choice_area3") != null){
+            document.getElementById("choice_area3").remove();
+        }
+        if(document.getElementById("choice_area4") != null){
+            document.getElementById("choice_area4").remove();
+        }
+        if(document.getElementById("choice_area5") != null){
+            document.getElementById("choice_area5").remove();
+        }
         if(document.getElementById("choice_areaGOMA") != null){
             document.getElementById("choice_areaGOMA").remove();
         }
