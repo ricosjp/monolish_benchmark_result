@@ -11,7 +11,7 @@ pages:
         - rm -rf public
         - mkdir -p public/
         - cp -r *.html public/
-        - cp -r *.js public/
+        - cp -r js/ public/
         - cp -r js_data/ public/
     artifacts:
         paths:
