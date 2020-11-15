@@ -1,0 +1,11 @@
+func	kind	prec	M	N	time[sec]
+transpose(Dense)	Dense	float	1000	1000	0.00304492
+transpose(Dense)	Dense	float	2000	2000	0.0157132
+transpose(Dense)	Dense	float	3000	3000	0.0483264
+transpose(Dense)	Dense	float	4000	4000	0.0975175
+transpose(Dense)	Dense	float	5000	5000	0.154232
+transpose(Dense)	Dense	double	1000	1000	0.00358908
+transpose(Dense)	Dense	double	2000	2000	0.0285235
+transpose(Dense)	Dense	double	3000	3000	0.073992
+transpose(Dense)	Dense	double	4000	4000	0.148218
+transpose(Dense)	Dense	double	5000	5000	0.229281
