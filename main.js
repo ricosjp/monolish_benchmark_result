@@ -33,7 +33,7 @@ const PlotBtn1 = () => {
     }
 
     //get version
-	const yaxis = document.getElementById("select_version").value;
+	const version = document.getElementById("select_version").value;
 
     //get yaxis
 	const y_axis = document.getElementById("select_yaxis").value;
