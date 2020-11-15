@@ -107,6 +107,7 @@ const create_choice2 = () => {
         // func
         text += '<h3>Function</h3>';
         text += create_pulldown('func', func_list.sort());
+        console.log(func_list.sort())
 
         // Size
         text += '<h3>Size</h3>';

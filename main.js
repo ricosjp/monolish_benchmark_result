@@ -33,6 +33,36 @@ const create_checkbox_br = (name, list) => {
 
 ///////////////////////////////////////////////////////////
 
+const create_checkbox_func = (name, vector, Dense, CRS) => {
+    let text = '<p>'
+    text += '<form name = "select_' + name + 'form">';
+
+    text += '<b> vector </b> <br>';
+    for (const a in vector) {
+        text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + vector[a] + '>' + vector[a]+'</input> ';
+    }
+
+    text += '<br>'
+    text += '<b> Dense </b> <br>';
+    for (const a in Dense) {
+        text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + Dense[a] + '>' + Dense[a]+'</input> ';
+    }
+
+    text += '<br>'
+    text += '<b> CRS </b> <br>';
+    for (const a in CRS) {
+        text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + CRS[a] + '>' + CRS[a]+'</input> ';
+    }
+
+    text += '</select_' + name +'_form>';
+    text += '</p>'
+
+    return text;
+}
+
+
+///////////////////////////////////////////////////////////
+
 const create_checkbox_with_option = (name, list, option) => {
     let text = '<p>'
     text += '<form name = "select_' + name + 'form">';

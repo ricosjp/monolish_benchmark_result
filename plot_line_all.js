@@ -156,7 +156,7 @@ const create_choice1 = () => {
         text += create_pulldown('yaxis', yaxis_list);
 
         text += '<h3>Function (複数選択可)</h3>';
-        text += create_checkbox('func', func_list.sort());
+        text += create_checkbox_func('func', kind_vector_list.sort(), kind_Dense_list.sort(), kind_CRS_list.sort());
 
         text += '<h3>Archtecture (複数選択可, 選ばなければすべて)</h3>';
         spec_list = [cpu_type_list[0], gpu_type_list[0]];
