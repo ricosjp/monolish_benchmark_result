@@ -6,12 +6,18 @@ import json
 
 SPEC_FILE_TAG="spec"
 VERSION_FILE_TAG="version_info"
+
 VERSION_TAG="version"
 ARCH_TAG="arch"
+PIPELINE_TAG="pipeline"
+CPU_TAG="cpu_type"
+GPU_TAG="gpu_type"
 
 INPUT_DIR = "./data/"
 OUTPUT_DIR = "js_data/"
 OUTPUT="json_data.js"
+
+yaxis_list = ["perf", "memspeed", "time"];
 
 # get_arch
 def get_arch(filename):
@@ -26,6 +32,17 @@ def get_arch(filename):
     else:
         sys.exit()
 
+def get_pipeline(filename):
+    data = pandas.read_table(filename)
+    return data.pipeline[0]
+
+def get_cpu(dir):
+    data = pandas.read_table(dir+"spec_cpu.tsv")
+    return data.cpu[0]
+
+def get_gpu(dir):
+    data = pandas.read_table(dir+"spec_gpu.tsv")
+    return data.gpu[0]
 
 # main
 path = INPUT_DIR
@@ -42,14 +59,17 @@ for version in versions:
                 version_data = pandas.read_table(path+version+"/"+version_file)
                 version_data.insert(0, VERSION_TAG, version)
                 version_data.insert(1, ARCH_TAG, get_arch(version_file))
+                version_data.insert(2, PIPELINE_TAG, get_pipeline(path+version+"/"+VERSION_FILE_TAG+".tsv"))
+                version_data.insert(3, CPU_TAG, get_cpu(path+version+"/"))
+                version_data.insert(4, GPU_TAG, get_gpu(path+version+"/"))
                 data = pandas.concat([data, version_data], sort=True)
                 #data = version_data # for test
+
 
 data.reset_index(inplace=True)
 
 # change data label
 data = data.rename(columns={'time[sec]':'time'})
-data = data.rename(columns={'perf[GFLOPS]':'perf'})
 data = data.rename(columns={'perf[GFLOPS]':'perf'})
 data = data.rename(columns={'mem[GB/s]':'memspeed'})
 
@@ -68,7 +88,7 @@ with open(OUTPUT_DIR+OUTPUT, "a") as f:
 data.to_html("check_result.html")
 
 # create and output type keys
-keys=["version", "func", "arch", "prec"]
+keys=["version", "func", "arch", "prec", "cpu_type", "gpu_type", "pipeline"]
 
 for key in keys:
     with open(OUTPUT_DIR+OUTPUT, 'a') as f:
@@ -87,4 +107,10 @@ with open(OUTPUT_DIR+OUTPUT, 'a') as f:
 with open(OUTPUT_DIR+OUTPUT, 'a') as f:
     print("const " + "Msize_list" + " = ", file=f, end="")
     json.dump(data["M"].dropna().unique().tolist(), f)
+    print(";", file=f)
+
+## create yaxis list
+with open(OUTPUT_DIR+OUTPUT, 'a') as f:
+    print("const " + "yaxis_list" + " = ", file=f, end="")
+    print(yaxis_list, file=f, end="")
     print(";", file=f)
