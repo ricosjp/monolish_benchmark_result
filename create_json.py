@@ -88,7 +88,9 @@ with open(OUTPUT_DIR+OUTPUT, "a") as f:
 data.to_html("check_result.html")
 
 # create and output type keys
-keys=["version", "func", "arch", "prec", "cpu_type", "gpu_type", "pipeline"]
+keys=["version", "func", "kind", "arch", "prec", "cpu_type", "gpu_type", "pipeline"]
+
+print(data["func"].dropna().unique().tolist())
 
 for key in keys:
     with open(OUTPUT_DIR+OUTPUT, 'a') as f:
@@ -114,3 +116,10 @@ with open(OUTPUT_DIR+OUTPUT, 'a') as f:
     print("const " + "yaxis_list" + " = ", file=f, end="")
     print(yaxis_list, file=f, end="")
     print(";", file=f)
+
+## create kind list
+for key in data.kind.dropna().unique():
+    with open(OUTPUT_DIR+OUTPUT, 'a') as f:
+        print("const " + "kind_" + key + "_list" + " = ", file = f, end="")
+        print(data[data["kind"] == key].func.dropna().unique().tolist(), file = f, end = "")
+        print(";", file=f)
