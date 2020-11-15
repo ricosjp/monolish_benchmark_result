@@ -104,7 +104,7 @@ const create_choice4 = () => {
         // Size
         text += '<h3>Size</h3>';
         let size_list = Array.from(new Set(Vsize_list.concat(Msize_list)));
-        text += create_pulldown('size', size_list.sort(sort_large));
+        text += create_pulldown('size', size_list.sort(sort_small));
 
         // arch
         text += '<h3>Archtecture</h3>';
