@@ -117,7 +117,7 @@ const create_pulldown_with_option = (name, list, option) => {
 ////////////
 /// goma ///
 ////////////
-const PlotBtn3 = () => {
+const PlotBtnGOMA = () => {
 
     let func_msg = document.createElement('h3');
     func_msg.innerHTML = 'つかれちゃったからプロットはおやすみ';
@@ -143,7 +143,7 @@ const create_choiceGOMA = () => {
         choice_area.id = 'choice_areaGOMA'
 
         text += '<h3>きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ</h3>';
-        text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtn3()"/>';
+        text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtnGOMA()"/>';
 
         choice_area.innerHTML+=text;
         document.body.appendChild(choice_area);
@@ -155,9 +155,7 @@ let p = document.createElement('p');
  
 p.innerHTML += '<button onclick="create_choice1()">折れ線グラフかくよ</button>  ';
 p.innerHTML += '<button onclick="create_choice2()">バージョンの違いをかくよ</button>  ';
-// p.innerHTML += '<button onclick="create_choice3()">Vector Summary</button>  ';
-// p.innerHTML += '<button onclick="create_choice4()">Dense Summary</button>  ';
-// p.innerHTML += '<button onclick="create_choice5()">CRS Summary</button>  ';
+p.innerHTML += '<button onclick="create_choice3()">Vector Summary</button>  ';
 p.innerHTML += '<button onclick="create_choiceGOMA()">きゅっきゅっ</button>  ';
 p.innerHTML += '<br>';
 

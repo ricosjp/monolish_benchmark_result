@@ -90,8 +90,6 @@ data.to_html("check_result.html")
 # create and output type keys
 keys=["version", "func", "kind", "arch", "prec", "cpu_type", "gpu_type", "pipeline"]
 
-print(data["func"].dropna().unique().tolist())
-
 for key in keys:
     with open(OUTPUT_DIR+OUTPUT, 'a') as f:
         print("const " + key + "_list" + " = ", file=f, end="")
