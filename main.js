@@ -178,7 +178,7 @@ const create_choice3 = () => {
         choice_area.id = 'choice_area3'
 
         text += '<h3>きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ</h3>';
-        text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtn2()"/>';
+        text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtn3()"/>';
 
         choice_area.innerHTML+=text;
         document.body.appendChild(choice_area);
