@@ -60,7 +60,6 @@ const create_checkbox_func = (name, vector, Dense, CRS) => {
     return text;
 }
 
-
 ///////////////////////////////////////////////////////////
 
 const create_checkbox_with_option = (name, list, option) => {
@@ -150,7 +149,6 @@ const create_choice3 = () => {
         document.body.appendChild(choice_area);
     }
 };
-
 
 ///// main /////
 let p = document.createElement('p');
