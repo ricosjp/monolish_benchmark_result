@@ -1,3 +1,10 @@
+const sort_large = (a, b) => {
+    return (a < b ? 1 : -1);
+}
+const sort_small = (a, b) => {
+    return (a < b ? -1 : 1);
+}
+
 const create_checkbox = (name, list) => {
     let text = '<p>'
     text += '<form name = "select_' + name + 'form">';
