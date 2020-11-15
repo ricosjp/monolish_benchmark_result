@@ -90,8 +90,8 @@ const create_choice2 = () => {
         if(document.getElementById("choice_area1") != null){
             document.getElementById("choice_area1").remove();
         }
-        if(document.getElementById("choice_area3") != null){
-            document.getElementById("choice_area3").remove();
+        if(document.getElementById("choice_areaGOMA") != null){
+            document.getElementById("choice_areaGOMA").remove();
         }
 
         let text = '';

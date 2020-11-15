@@ -125,9 +125,9 @@ const PlotBtn3 = () => {
 
 };
 
-const create_choice3 = () => {
+const create_choiceGOMA = () => {
 
-    if(document.getElementById("choice_area3") == null){
+    if(document.getElementById("choice_areaGOMA") == null){
 
         // delete other choice
         if(document.getElementById("choice_area1") != null){
@@ -140,7 +140,7 @@ const create_choice3 = () => {
         let text = '';
 
         let choice_area = document.createElement('div');
-        choice_area.id = 'choice_area3'
+        choice_area.id = 'choice_areaGOMA'
 
         text += '<h3>きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ</h3>';
         text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtn3()"/>';
@@ -155,7 +155,7 @@ let p = document.createElement('p');
  
 p.innerHTML += '<button onclick="create_choice1()">折れ線グラフかくよ</button>  ';
 p.innerHTML += '<button onclick="create_choice2()">バージョンの違いをかくよ</button>  ';
-p.innerHTML += '<button onclick="create_choice3()">きゅっきゅっ</button>  ';
+p.innerHTML += '<button onclick="create_choiceGOMA()">きゅっきゅっ</button>  ';
 p.innerHTML += '<br>';
 
 document.body.appendChild(p);
