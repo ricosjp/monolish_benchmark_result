@@ -160,12 +160,12 @@ const create_choice1 = () => {
 
         text += '<h3>Archtecture (複数選択可, 選ばなければすべて)</h3>';
         spec_list = [cpu_type_list[0], gpu_type_list[0]];
-        text += create_checkbox_with_option('arch', arch_list, spec_list);
+        text += create_checkbox_with_option_br('arch', arch_list, spec_list);
 
         text += '<h3>Precision (複数選択可, 選ばなければすべて)</h3>';
-        text += create_checkbox('prec', prec_list);
+        text += create_checkbox_br('prec', prec_list);
 
-        text += '<h3>Version</h3>';
+        text += '<h3>Pipeline ID (Version)</h3>';
         text += create_pulldown_with_option('version', version_list, pipeline_list);
 
         // plot button

@@ -105,7 +105,7 @@ const create_choice2 = () => {
         text += create_pulldown('yaxis', yaxis_list);
 
         // func
-        text += '<h3>y-axis</h3>';
+        text += '<h3>Function</h3>';
         text += create_pulldown('func', func_list.sort());
 
         // Size

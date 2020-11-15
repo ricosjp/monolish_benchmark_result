@@ -5,6 +5,8 @@ const sort_small = (a, b) => {
     return (a < b ? -1 : 1);
 }
 
+///////////////////////////////////////////////////////////
+
 const create_checkbox = (name, list) => {
     let text = '<p>'
     text += '<form name = "select_' + name + 'form">';
@@ -17,6 +19,20 @@ const create_checkbox = (name, list) => {
     return text;
 }
 
+const create_checkbox_br = (name, list) => {
+    let text = '<p>'
+    text += '<form name = "select_' + name + 'form">';
+    for (const a in list) {
+        text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + list[a] + '>' + list[a]+'</input><br>';
+    }
+    text += '</select_' + name +'_form>';
+    text += '</p>'
+
+    return text;
+}
+
+///////////////////////////////////////////////////////////
+
 const create_checkbox_with_option = (name, list, option) => {
     let text = '<p>'
     text += '<form name = "select_' + name + 'form">';
@@ -28,6 +44,20 @@ const create_checkbox_with_option = (name, list, option) => {
 
     return text;
 }
+
+const create_checkbox_with_option_br = (name, list, option) => {
+    let text = '<p>'
+    text += '<form name = "select_' + name + 'form">';
+    for (const a in list) {
+        text += '<input type="checkbox" name=' + '"checked_' + name + '" value=' + list[a] + '>' + option[a] + ' (' + list[a] + ')' +'</input><br>';
+    }
+    text += '</select_' + name +'_form>';
+    text += '</p>'
+
+    return text;
+}
+
+///////////////////////////////////////////////////////////
 
 const create_pulldown = (name, list) => {
 
