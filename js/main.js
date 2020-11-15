@@ -155,6 +155,9 @@ let p = document.createElement('p');
  
 p.innerHTML += '<button onclick="create_choice1()">折れ線グラフかくよ</button>  ';
 p.innerHTML += '<button onclick="create_choice2()">バージョンの違いをかくよ</button>  ';
+// p.innerHTML += '<button onclick="create_choice3()">Vector Summary</button>  ';
+// p.innerHTML += '<button onclick="create_choice4()">Dense Summary</button>  ';
+// p.innerHTML += '<button onclick="create_choice5()">CRS Summary</button>  ';
 p.innerHTML += '<button onclick="create_choiceGOMA()">きゅっきゅっ</button>  ';
 p.innerHTML += '<br>';
 
