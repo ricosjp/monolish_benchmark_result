@@ -32,10 +32,14 @@ const PlotBtn1 = () => {
         precs = prec_list;
     }
 
+    //get version
 	const version = document.getElementById("select_version").value;
 
+    //get version
+	const y_axis = document.getElementById("select_yaxis").value;
+
     // plot!!
-    plot_result(funcs, archs, precs, version);
+    plot_result(funcs, archs, precs, version, y_axis);
 
 };
 
@@ -54,17 +58,21 @@ const create_choice1 = () => {
         let choice_area = document.createElement('div');
         choice_area.id = 'choice_area1'
 
+        text += '<h3>Version</h3>';
+        text += create_pulldown('yaxis', yaxis_list);
+
         text += '<h3>Function (複数選択可)</h3>';
         text += create_checkbox('func', func_list);
 
         text += '<h3>Archtecture (複数選択可, 選ばなければすべて)</h3>';
-        text += create_checkbox('arch', arch_list);
+        spec_list = [cpu_type_list[0], gpu_type_list[0]];
+        text += create_checkbox_with_option('arch', arch_list, spec_list);
 
         text += '<h3>Precision (複数選択可, 選ばなければすべて)</h3>';
         text += create_checkbox('prec', prec_list);
 
         text += '<h3>Version</h3>';
-        text += create_pulldown('version', version_list);
+        text += create_pulldown_with_option('version', version_list, pipeline_list);
 
         // plot button
         text += '<br><input type="button" value="Plot!" onclick="PlotBtn1()"/>'

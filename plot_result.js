@@ -1,4 +1,4 @@
-const search_data = (func, arch, precision, version) => {
+const search_data = (func, arch, precision, version, y_axis) => {
     let x = [];
     let y = [];
     
@@ -10,22 +10,33 @@ const search_data = (func, arch, precision, version) => {
             else{
                 x.push(json_data[i].size);
             }
-            y.push(json_data[i].perf);
+            y.push(json_data[i][y_axis]);
         }
     }
-    result = [x, y, version]
+    result = [x, y, version, y_axis];
 
     return result;
 };
 
-const plot_result = (funcs, archs, precs, version) =>{
+const plot_result = (funcs, archs, precs, version, y_axis) =>{
 
     let plot_data = [];
+    let y_title;
+
+    if(y_axis == 'perf'){
+        y_title = 'Performance [GFLOPS]'
+    }
+    if(y_axis == 'memspeed'){
+        y_title = 'Memory Bandwidth [GB/s]'
+    }
+    if(y_axis == 'time'){
+        y_title = 'Time [sec]'
+    }
 
     const layout = {
         title: 'version: ' + version,
         yaxis: {
-            title: 'Performance [GFLOPS]',
+            title: y_title,
             autorange: 'true'
         },
         xaxis:{
@@ -48,7 +59,7 @@ const plot_result = (funcs, archs, precs, version) =>{
         for(let j=0; j< archs.length; j++){
             for(let k=0; k< precs.length; k++){
 
-                const plot_element_data = search_data(funcs[i], archs[j], precs[k], version);
+                const plot_element_data = search_data(funcs[i], archs[j], precs[k], version, y_axis);
 
                 const plot_element = {
                     x: plot_element_data[0],
