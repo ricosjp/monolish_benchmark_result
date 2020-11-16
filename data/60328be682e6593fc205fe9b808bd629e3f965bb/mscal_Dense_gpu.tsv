@@ -1,0 +1,11 @@
+func	kind	prec	M	N	time[sec]	perf[GFLOPS]	mem[GB/s]
+mscal(Dense)	Dense	float	1000	1000	0.00229086	0.436517	3.49214
+mscal(Dense)	Dense	float	2000	2000	0.00603199	0.663132	5.30505
+mscal(Dense)	Dense	float	3000	3000	0.0120784	0.745134	5.96107
+mscal(Dense)	Dense	float	4000	4000	0.0187702	0.852414	6.81931
+mscal(Dense)	Dense	float	5000	5000	0.026769	0.933914	7.47132
+mscal(Dense)	Dense	double	1000	1000	0.00213583	0.468203	7.49125
+mscal(Dense)	Dense	double	2000	2000	0.00612007	0.653587	10.4574
+mscal(Dense)	Dense	double	3000	3000	0.0128353	0.701191	11.2191
+mscal(Dense)	Dense	double	4000	4000	0.0221492	0.722373	11.558
+mscal(Dense)	Dense	double	5000	5000	0.0343084	0.728685	11.659
