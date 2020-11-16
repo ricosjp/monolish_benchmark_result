@@ -1,0 +1,11 @@
+func	kind	prec	M	N	time[sec]	perf[GFLOPS]	mem[GB/s]
+matadd(Dense,Dense,Dense)	Dense	float	1000	1000	5.60289e-05	17.8479	214.175
+matadd(Dense,Dense,Dense)	Dense	float	2000	2000	0.0019747	2.02562	24.3075
+matadd(Dense,Dense,Dense)	Dense	float	3000	3000	0.00831677	1.08215	12.9858
+matadd(Dense,Dense,Dense)	Dense	float	4000	4000	0.0205895	0.777095	9.32514
+matadd(Dense,Dense,Dense)	Dense	float	5000	5000	0.0331741	0.753599	9.04319
+matadd(Dense,Dense,Dense)	Dense	double	1000	1000	9.97575e-05	10.0243	240.583
+matadd(Dense,Dense,Dense)	Dense	double	2000	2000	0.009358	0.427442	10.2586
+matadd(Dense,Dense,Dense)	Dense	double	3000	3000	0.0191045	0.471093	11.3062
+matadd(Dense,Dense,Dense)	Dense	double	4000	4000	0.0417015	0.383679	9.20829
+matadd(Dense,Dense,Dense)	Dense	double	5000	5000	0.0647048	0.38637	9.27289
