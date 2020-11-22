@@ -1,0 +1,11 @@
+func	kind	prec	M	N	time[sec]	perf[GFLOPS]
+mv_mul(Dense)	Dense	float	1000	1000	0.00253262	0.789697
+mv_mul(Dense)	Dense	float	2000	2000	6.74579e-05	118.592
+mv_mul(Dense)	Dense	float	3000	3000	0.000226021	79.6385
+mv_mul(Dense)	Dense	float	4000	4000	0.00355093	9.01173
+mv_mul(Dense)	Dense	float	5000	5000	0.00692391	7.22135
+mv_mul(Dense)	Dense	double	1000	1000	0.000157052	12.7347
+mv_mul(Dense)	Dense	double	2000	2000	0.000154266	51.8585
+mv_mul(Dense)	Dense	double	3000	3000	0.00417642	4.30992
+mv_mul(Dense)	Dense	double	4000	4000	0.00930493	3.43904
+mv_mul(Dense)	Dense	double	5000	5000	0.0152457	3.27961
