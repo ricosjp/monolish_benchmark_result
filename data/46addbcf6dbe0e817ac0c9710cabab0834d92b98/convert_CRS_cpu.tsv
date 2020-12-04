@@ -1,3 +1,0 @@
-func	kind	prec	M	N	time[sec]
-convert(COO,CRS)	CRS	float	10000	10000	0.00656489
-convert(COO,CRS)	CRS	double	10000	10000	0.00488286

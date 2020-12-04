@@ -1,3 +1,0 @@
-func	kind	prec	M	N	time[sec]	perf[GFLOPS]	mem[GB/s]
-matadd(CRS,CRS,CRS)	CRS	float	10000	10000	0.000335795	4.82437	28.9462
-matadd(CRS,CRS,CRS)	CRS	double	10000	10000	0.000573278	2.82586	33.9103

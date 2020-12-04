@@ -1,3 +1,0 @@
-func	kind	prec	M	N	time[sec]	perf[GFLOPS]
-mv_mul(CRS)	CRS	float	10000	10000	0.00296161	0.547
-mv_mul(CRS)	CRS	double	10000	10000	0.000425324	3.80886

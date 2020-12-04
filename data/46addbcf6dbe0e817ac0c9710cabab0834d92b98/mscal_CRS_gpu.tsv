@@ -1,3 +1,0 @@
-func	kind	prec	M	N	time[sec]	perf[GFLOPS]	mem[GB/s]
-mscal(CRS)	CRS	float	10000	10000	0.00030873	2.62365	20.9892
-mscal(CRS)	CRS	double	10000	10000	0.000413388	1.95942	31.3507

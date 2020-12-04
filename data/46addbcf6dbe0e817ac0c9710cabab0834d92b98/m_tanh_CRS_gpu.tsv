@@ -1,3 +1,0 @@
-func	kind	prec	M	N	time[sec]	perf[GFLOPS]
-m_tanh(CRS)	CRS	float	10000	10000	0.0013768	0.58832
-m_tanh(CRS)	CRS	double	10000	10000	0.00240556	0.33672
