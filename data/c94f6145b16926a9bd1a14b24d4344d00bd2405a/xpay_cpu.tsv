@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+xpay	vector	float	1000	7.23365e-05	0.0414728	0.110594
+xpay	vector	float	10000	7.7215e-06	3.88526	10.3607
+xpay	vector	float	100000	8.99307e-06	33.359	88.9574
+xpay	vector	float	1000000	3.33227e-05	90.0286	240.076
+xpay	vector	float	10000000	0.00625176	4.79865	12.7964
+xpay	vector	float	100000000	0.0703436	4.26478	11.3728
+xpay	vector	double	1000	7.86307e-06	0.381531	2.03483
+xpay	vector	double	10000	8.43403e-06	3.55702	18.9708
+xpay	vector	double	100000	1.18055e-05	25.412	135.53
+xpay	vector	double	1000000	5.95513e-05	50.3767	268.676
+xpay	vector	double	10000000	0.0062889	4.77031	25.4416
+xpay	vector	double	100000000	0.108185	2.77302	14.7895
