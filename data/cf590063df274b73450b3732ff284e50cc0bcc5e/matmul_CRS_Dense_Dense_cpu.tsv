@@ -1,0 +1,11 @@
+func	kind	prec	M	N	K	time[sec]	perf[GFLOPS]
+matmul(Dense,CRS,Dense)	CRS	float	1000	1000	1000	0.00273129	59.3127
+matmul(Dense,CRS,Dense)	CRS	float	1500	1500	1500	0.00611646	59.5933
+matmul(Dense,CRS,Dense)	CRS	float	2000	2000	2000	0.0114996	56.3498
+matmul(Dense,CRS,Dense)	CRS	float	2500	2500	2500	0.0218839	46.267
+matmul(Dense,CRS,Dense)	CRS	float	3000	3000	3000	0.0298094	48.9108
+matmul(Dense,CRS,Dense)	CRS	double	1000	1000	1000	0.014966	10.8245
+matmul(Dense,CRS,Dense)	CRS	double	1500	1500	1500	0.0326021	11.1803
+matmul(Dense,CRS,Dense)	CRS	double	2000	2000	2000	0.0555139	11.6727
+matmul(Dense,CRS,Dense)	CRS	double	2500	2500	2500	0.0871743	11.6147
+matmul(Dense,CRS,Dense)	CRS	double	3000	3000	3000	0.126437	11.5314
