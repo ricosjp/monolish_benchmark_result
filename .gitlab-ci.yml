@@ -1,4 +1,4 @@
-image: ghcr.io/ricosjp/allgebra/cuda10_2/gcc10/mkl:20.12.1
+image: ubuntu:latest
 
 stages:
     - deploy
@@ -6,7 +6,7 @@ stages:
 pages:
     stage: deploy
     script:
-        - apt update && apt install -y python3-pip
+        - apt update && apt install -y python3 python3-pip
         - python3 -m pip install pandas
         - python3 create_json.py
         - ls
