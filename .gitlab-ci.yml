@@ -1,4 +1,4 @@
-image: ghcr.io/ricosjp/allgebra/cuda10_2/gcc10/mkl:latest
+image: ghcr.io/ricosjp/allgebra/cuda10_2/gcc10/mkl:20.12.1
 
 stages:
     - deploy
