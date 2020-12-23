@@ -1,2 +1,0 @@
-physical_cpu	cpu	cores	simd	memory	gpu	gcc
-2	Intel(R) Xeon(R) CPU E5-2450 0 @ 2.10GHz	16	"AVX"	144G	none	gcc (Ubuntu 7.5.0-6ubuntu2) 7.5.0
