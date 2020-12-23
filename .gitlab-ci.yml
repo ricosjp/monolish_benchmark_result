@@ -6,6 +6,7 @@ stages:
 pages:
     stage: deploy
     script:
+        - python3 -m pip install pandas
         - python3 create_json.py
         - ls
         - rm -rf public
