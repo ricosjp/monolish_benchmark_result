@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+asum	vector	float	1000	1.11733e-07	8.94988	35.7995
+asum	vector	float	10000	5.33133e-07	18.757	75.0281
+asum	vector	float	100000	4.8982e-06	20.4157	81.6627
+asum	vector	float	1000000	0.000108068	9.25342	37.0137
+asum	vector	float	10000000	0.0018775	5.32622	21.3049
+asum	vector	float	100000000	0.0182588	5.47682	21.9073
+asum	vector	double	1000	2.235e-07	4.47427	35.7942
+asum	vector	double	10000	9.84767e-07	10.1547	81.2375
+asum	vector	double	100000	1.06695e-05	9.37254	74.9803
+asum	vector	double	1000000	0.000400176	2.4989	19.9912
+asum	vector	double	10000000	0.0036723	2.72309	21.7847
+asum	vector	double	100000000	0.036883	2.71127	21.6902
