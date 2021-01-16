@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+sv_mul	vector	float	1000	3.6341e-06	0.275171	2.20137
+sv_mul	vector	float	10000	2.69823e-06	3.70613	29.649
+sv_mul	vector	float	100000	4.3977e-06	22.7392	181.913
+sv_mul	vector	float	1000000	3.44598e-05	29.0193	232.154
+sv_mul	vector	float	10000000	0.00414118	2.41477	19.3182
+sv_mul	vector	float	100000000	0.0411661	2.42918	19.4335
+sv_mul	vector	double	1000	2.72617e-06	0.366815	5.86905
+sv_mul	vector	double	10000	2.95663e-06	3.38223	54.1156
+sv_mul	vector	double	100000	6.5651e-06	15.2321	243.713
+sv_mul	vector	double	1000000	0.000686175	1.45735	23.3177
+sv_mul	vector	double	10000000	0.00825756	1.21101	19.3762
+sv_mul	vector	double	100000000	0.0822746	1.21544	19.4471
