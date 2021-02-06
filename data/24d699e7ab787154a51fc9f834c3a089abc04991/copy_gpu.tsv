@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+copy	vector	float	1000	0.000228609	0	0.0349942
+copy	vector	float	10000	0.000357154	0	0.223993
+copy	vector	float	100000	0.000404768	0	1.97644
+copy	vector	float	1000000	0.000727304	0	10.9995
+copy	vector	float	10000000	0.00147407	0	54.2715
+copy	vector	float	100000000	0.00906652	0	88.2367
+copy	vector	double	1000	0.0003571	0	0.0448054
+copy	vector	double	10000	0.000354197	0	0.451726
+copy	vector	double	100000	0.000406364	0	3.93735
+copy	vector	double	1000000	0.000859087	0	18.6244
+copy	vector	double	10000000	0.00226662	0	70.5897
+copy	vector	double	100000000	0.0171222	0	93.4461
