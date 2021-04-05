@@ -1,2 +1,0 @@
-physical_cpu	cpu	cores	simd	memory	gpu	gcc
-1	AMD Ryzen 7 PRO 4750G with Radeon Graphics	16	"AVX2"	15.5G	none	gcc (Ubuntu 7.5.0-6ubuntu2) 7.5.0
