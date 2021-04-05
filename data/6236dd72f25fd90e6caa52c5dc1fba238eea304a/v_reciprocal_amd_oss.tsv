@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+reciprocal	vector	float	1000	4.81607e-06	0.207638	1.66111
+reciprocal	vector	float	10000	4.61033e-06	2.16904	17.3523
+reciprocal	vector	float	100000	1.73513e-05	5.76326	46.1061
+reciprocal	vector	float	1000000	0.00010982	9.10578	72.8462
+reciprocal	vector	float	10000000	0.00338567	2.95363	23.629
+reciprocal	vector	float	100000000	0.03529	2.83366	22.6693
+reciprocal	vector	double	1000	2.8704e-06	0.348384	5.57414
+reciprocal	vector	double	10000	4.49143e-06	2.22646	35.6234
+reciprocal	vector	double	100000	2.42663e-05	4.12094	65.935
+reciprocal	vector	double	1000000	0.000155361	6.43662	102.986
+reciprocal	vector	double	10000000	0.00670122	1.49226	23.8762
+reciprocal	vector	double	100000000	0.0719253	1.39033	22.2453
