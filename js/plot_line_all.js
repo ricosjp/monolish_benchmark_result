@@ -160,7 +160,7 @@ const create_choice1 = () => {
         text += create_checkbox_func('func', kind_vector_list.sort(), kind_Dense_list.sort(), kind_CRS_list.sort());
 
         text += '<h3>Archtecture (複数選択可, 選ばなければすべて)</h3>';
-        spec_list = [cpu_type_list[0], cpu_type_list[1], cpu_type_list[2], gpu_type_list[0]];
+        spec_list = [cpu_type_list[0], cpu_type_list[2], gpu_type_list[0], cpu_type_list[1]];
         text += create_checkbox_with_option_br('arch', arch_list, spec_list);
 
         text += '<h3>Precision (複数選択可, 選ばなければすべて)</h3>';
