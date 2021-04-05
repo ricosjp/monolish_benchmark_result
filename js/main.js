@@ -13,7 +13,6 @@ const delete_other_choice = (mychoice) =>{
         "choice_area3",
         "choice_area4",
         "choice_area5",
-        "choice_areaGOMA"
     ];
 
     for (let choice of choice_list){

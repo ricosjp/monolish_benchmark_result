@@ -21,10 +21,14 @@ yaxis_list = ["perf", "memspeed", "time"];
 
 # get_arch
 def get_arch(filename):
-    if "cpu" in filename:
-        return "cpu"
-    elif "gpu" in filename:
-        return "gpu"
+    if "intel_mkl" in filename:
+        return "intel_mkl"
+    if "intel_oss" in filename:
+        return "intel_oss"
+    if "amd_oss" in filename:
+        return "amd_oss"
+    elif "nvidia" in filename:
+        return "nvidia"
     elif "sx" in filename:
         return "sx"
     elif "fx" in filename:
@@ -60,8 +64,12 @@ for version in versions:
                 version_data.insert(0, VERSION_TAG, version)
                 version_data.insert(1, ARCH_TAG, get_arch(version_file))
                 version_data.insert(2, PIPELINE_TAG, get_pipeline(path+version+"/"+VERSION_FILE_TAG+".tsv"))
-                version_data.insert(3, CPU_TAG, get_cpu(path+version+"/"))
-                version_data.insert(4, GPU_TAG, get_gpu(path+version+"/"))
+
+                cpu = pandas.read_table(path+version+"/spec_"+get_arch(version_file)+".tsv").cpu[0]
+                gpu = pandas.read_table(path+version+"/spec_"+"nvidia"+".tsv").gpu[0]
+
+                version_data.insert(3, CPU_TAG, cpu)
+                version_data.insert(4, GPU_TAG, gpu)
                 data = pandas.concat([data, version_data], sort=True)
                 #data = version_data # for test
 
