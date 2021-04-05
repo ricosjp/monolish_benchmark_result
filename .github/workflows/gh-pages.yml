@@ -1,0 +1,29 @@
+name: github pages
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: doxygen
+      shell: bash
+      run:
+        apt update && apt install -y python3 python3-pip
+        python3 -m pip install pandas
+        python3 create_json.py
+        rm -rf html/
+        mkdir -p html/
+        cp -r *.html public/
+        cp -r js/ public/
+        cp -r js_data/ public/
+
+    - name: deploy_pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./html/
+        force_orphan: true
