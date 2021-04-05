@@ -133,52 +133,14 @@ const create_pulldown_with_option = (name, list, option) => {
 
     return text;
 }
-
-////////////
-/// goma ///
-////////////
-const PlotBtnGOMA = () => {
-
-    let func_msg = document.createElement('h3');
-    func_msg.innerHTML = 'つかれちゃったからプロットはおやすみ';
-    document.body.appendChild(func_msg);
-
-};
-
-const create_choiceGOMA = () => {
-
-    if(document.getElementById("choice_areaGOMA") == null){
-
-        // delete other choice
-        if(document.getElementById("choice_area1") != null){
-            document.getElementById("choice_area1").remove();
-        }
-        if(document.getElementById("choice_area2") != null){
-            document.getElementById("choice_area2").remove();
-        }
-
-        let text = '';
-
-        let choice_area = document.createElement('div');
-        choice_area.id = 'choice_areaGOMA'
-
-        text += '<h3>きゅきゅきゅっきゅきゅっきゅきゅっっきゅきゅ</h3>';
-        text += '<br><input type="button" value="ごまちゃんぷろっと" onclick="PlotBtnGOMA()"/>';
-
-        choice_area.innerHTML+=text;
-        document.body.appendChild(choice_area);
-    }
-};
-
 ///// main /////
 let p = document.createElement('p');
  
-p.innerHTML += '<button onclick="create_choice1()">折れ線グラフかくよ</button>  ';
-p.innerHTML += '<button onclick="create_choice2()">バージョンの違いをかくよ</button>  ';
-p.innerHTML += '<button onclick="create_choice3()">Vector Summary</button>  ';
-p.innerHTML += '<button onclick="create_choice4()">Dense Summary</button>  ';
-p.innerHTML += '<button onclick="create_choice5()">CRS Summary</button>  ';
-p.innerHTML += '<button onclick="create_choiceGOMA()">きゅっきゅっ</button>  ';
+p.innerHTML += '<button onclick="create_choice1()">Performances</button>  ';
+p.innerHTML += '<button onclick="create_choice2()">Version difference</button>  ';
+p.innerHTML += '<button onclick="create_choice3()">Summary (vector)</button>  ';
+p.innerHTML += '<button onclick="create_choice4()">Summary (Dense)</button>  ';
+p.innerHTML += '<button onclick="create_choice5()">Summary (CRS)</button>  ';
 p.innerHTML += '<br>';
 
 document.body.appendChild(p);
