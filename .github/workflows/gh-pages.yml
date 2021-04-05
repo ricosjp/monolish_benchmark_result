@@ -15,11 +15,10 @@ jobs:
         sudo apt-get update -y && sudo apt install -y python3 python3-pip
         python3 -m pip install pandas
         python3 create_json.py
-        rm -rf html/
         mkdir -p html/
-        cp -r *.html public/
-        cp -r js/ public/
-        cp -r js_data/ public/
+        cp -r *.html html/
+        cp -r js/ html/
+        cp -r js_data/ html/
 
     - name: deploy_pages
       uses: peaceiris/actions-gh-pages@v3
