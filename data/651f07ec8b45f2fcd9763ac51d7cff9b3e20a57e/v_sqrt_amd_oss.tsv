@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+sqrt	vector	float	1000	4.07133e-06	0.24562	1.96496
+sqrt	vector	float	10000	5.52373e-06	1.81037	14.483
+sqrt	vector	float	100000	3.28314e-05	3.04586	24.3669
+sqrt	vector	float	1000000	0.000208069	4.8061	38.4488
+sqrt	vector	float	10000000	0.0034918	2.86385	22.9108
+sqrt	vector	float	100000000	0.0369208	2.7085	21.668
+sqrt	vector	double	1000	2.85703e-06	0.350013	5.60021
+sqrt	vector	double	10000	5.2542e-06	1.90324	30.4518
+sqrt	vector	double	100000	3.17046e-05	3.15412	50.4659
+sqrt	vector	double	1000000	0.000293515	3.40698	54.5117
+sqrt	vector	double	10000000	0.00709198	1.41004	22.5607
+sqrt	vector	double	100000000	0.0737857	1.35528	21.6844
