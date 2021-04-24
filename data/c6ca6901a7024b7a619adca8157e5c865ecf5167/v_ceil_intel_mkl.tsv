@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+ceil	vector	float	1000	0.000711942	0.00140461	0.0112369
+ceil	vector	float	10000	2.6713e-06	3.7435	29.948
+ceil	vector	float	100000	3.1825e-05	3.14219	25.1375
+ceil	vector	float	1000000	7.66808e-05	13.0411	104.329
+ceil	vector	float	10000000	0.00173958	5.74852	45.9882
+ceil	vector	float	100000000	0.0403735	2.47687	19.815
+ceil	vector	double	1000	2.6357e-06	0.379406	6.07049
+ceil	vector	double	10000	5.1608e-06	1.93768	31.0029
+ceil	vector	double	100000	3.49983e-05	2.85728	45.7165
+ceil	vector	double	1000000	9.34003e-05	10.7066	171.306
+ceil	vector	double	10000000	0.00504603	1.98176	31.7081
+ceil	vector	double	100000000	0.0693372	1.44223	23.0756

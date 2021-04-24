@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+atanh	vector	float	1000	6.24542e-05	0.0160117	0.128094
+atanh	vector	float	10000	6.0623e-05	0.164954	1.31963
+atanh	vector	float	100000	7.1856e-05	1.39167	11.1334
+atanh	vector	float	1000000	0.000218028	4.58656	36.6925
+atanh	vector	float	10000000	0.00171337	5.83644	46.6915
+atanh	vector	float	100000000	0.012833	7.79244	62.3395
+atanh	vector	double	1000	3.5516e-05	0.0281564	0.450502
+atanh	vector	double	10000	7.79666e-05	0.12826	2.05216
+atanh	vector	double	100000	0.000166722	0.599802	9.59684
+atanh	vector	double	1000000	0.000843174	1.18599	18.9759
+atanh	vector	double	10000000	0.00645257	1.54977	24.7963
+atanh	vector	double	100000000	0.062824	1.59175	25.468
