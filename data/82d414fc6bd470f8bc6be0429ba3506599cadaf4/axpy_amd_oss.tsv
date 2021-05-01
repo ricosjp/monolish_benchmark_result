@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+axpy	vector	float	1000	2.89567e-07	6.90687	41.4412
+axpy	vector	float	10000	2.69607e-06	7.41821	44.5093
+axpy	vector	float	100000	9.21533e-06	21.703	130.218
+axpy	vector	float	1000000	2.98548e-05	66.9908	401.945
+axpy	vector	float	10000000	0.00447785	4.46643	26.7986
+axpy	vector	float	100000000	0.0434896	4.5988	27.5928
+axpy	vector	double	1000	2.64833e-07	7.55192	90.623
+axpy	vector	double	10000	2.07357e-06	9.64522	115.743
+axpy	vector	double	100000	6.75737e-06	29.5973	355.168
+axpy	vector	double	1000000	0.000724636	2.76001	33.1201
+axpy	vector	double	10000000	0.00891139	2.24432	26.9318
+axpy	vector	double	100000000	0.0868272	2.30343	27.6411
