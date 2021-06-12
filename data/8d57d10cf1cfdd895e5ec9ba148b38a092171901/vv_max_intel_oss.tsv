@@ -1,0 +1,13 @@
+func	kind	prec	size	time[sec]	perf[GFLOPS]	mem[GB/s]
+vv_max	vector	float	1000	2.23955e-05	0.0446519	0.535823
+vv_max	vector	float	10000	1.20478e-05	0.830025	9.9603
+vv_max	vector	float	100000	1.33298e-05	7.50197	90.0236
+vv_max	vector	float	1000000	4.5113e-05	22.1666	265.999
+vv_max	vector	float	10000000	0.0122405	0.816963	9.80355
+vv_max	vector	float	100000000	0.053985	1.85237	22.2284
+vv_max	vector	double	1000	1.33366e-05	0.0749816	1.79956
+vv_max	vector	double	10000	1.27923e-05	0.781718	18.7612
+vv_max	vector	double	100000	1.73967e-05	5.74823	137.957
+vv_max	vector	double	1000000	0.000105217	9.50416	228.1
+vv_max	vector	double	10000000	0.0144626	0.691438	16.5945
+vv_max	vector	double	100000000	0.155534	0.642946	15.4307
